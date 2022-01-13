@@ -17,4 +17,12 @@
 					<p id="75dd5bf6-18c3-44a1-86cc-3bb614583549" class="">Vibha Gautam (20030121128)</p>
 				</div>
 
+<div>
+<h2 id="0151386d-1e1f-4f69-b2cd-0634a7e408ee" class="">Sync Project On Android Studio</h2>
+<p>Part 1</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/swNHOI0J0pw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+<p>Part 2</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6L5TrhNoVZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
