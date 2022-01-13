@@ -19,10 +19,8 @@
 
 <div>
 <h2 id="0151386d-1e1f-4f69-b2cd-0634a7e408ee" class="">Sync Project On Android Studio</h2>
-<p>Part 1</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/swNHOI0J0pw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class=""><a href="https://youtu.be/swNHOI0J0pw">Part 1</a></p>
 
 <br>
-<p>Part 2</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6L5TrhNoVZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class=""><a href="https://www.youtube.com/watch?v=6L5TrhNoVZA">Part 2</a></p>
 
