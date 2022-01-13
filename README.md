@@ -3,6 +3,10 @@
 
 A college project
 
+					<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class="">Estimated Time : 250+ Hours</p>
+					<p id="55bfd51d-e761-4f2c-9ba8-429943c8607d" class="">Forte : Mobile Development Android
+						SDLC Components : Designing, Technical Planning, Developing &amp; Testing</p>
+
 <div id="3e1927f5-fb95-4783-aacd-02277abda632" style="width:75%" class="column">
 					<h2 id="0151386d-1e1f-4f69-b2cd-0634a7e408ee" class="">Members</h2>
 					<p id="0bf25d69-3340-478e-8532-cf5c4eeea47f" class="">Vaishnavi Singh (20030121123)</p>
