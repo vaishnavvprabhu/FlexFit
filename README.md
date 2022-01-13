@@ -1,7 +1,4 @@
  ![App_Icon-_1-_Fin-RGB_-_smol](https://user-images.githubusercontent.com/67993582/149269229-0f10dba1-eb0b-4875-900d-aef2d71784a7.png) 
- # FlexFit
-
-A college project
 				<div id="2a9ec669-3456-4a59-8007-8026324615e3" style="width:75%" class="column">
 					<h2 id="929eecc1-af7f-4737-88f9-1addde5786ad" class="">Flex Fit - Fitness App (Android)</h2>
 					<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class="">Estimated Time : 250+ Hours</p>
