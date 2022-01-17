@@ -19,7 +19,7 @@
         app:srcCompat="@mipmap/flexfit_icon" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField1"
+        android:id="@+id/emailtf"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"
@@ -39,7 +39,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField2"
+        android:id="@+id/passwordtf"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"

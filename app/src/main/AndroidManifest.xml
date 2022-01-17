@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vgroup.flexfit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity_setup"
+            android:exported="true" />
         <activity
             android:name=".Activity_ContactUs"
             android:exported="true" />
@@ -24,11 +29,9 @@
             android:exported="true" />
         <activity
             android:name=".activity_intro"
-            android:label="FlexFit"
             android:exported="true"
-            >
+            android:label="FlexFit">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -36,8 +39,4 @@
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>
-
-

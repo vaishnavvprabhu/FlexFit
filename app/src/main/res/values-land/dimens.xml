@@ -1,7 +1,3 @@
 <resources>
-<<<<<<< HEAD
     <dimen name="activity_horizontal_margin">48dp</dimen>
-=======
- <dimen name="activity_horizontal_margin">48dp</dimen>
->>>>>>> 89f798ad40e5029129bd80fa50b2642f5339796c
 </resources>
