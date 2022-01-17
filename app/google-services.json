@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "911262837691",
+    "project_id": "flexfit-ad695",
+    "storage_bucket": "flexfit-ad695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911262837691:android:68915f875f5204e38eb29e",
+        "android_client_info": {
+          "package_name": "com.vgroup.flexfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911262837691-h8q20g041op724uujj5n40aegc9rhnhr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7KToVbas7NWaPZQZFWNwBac5N2Skik0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911262837691-h8q20g041op724uujj5n40aegc9rhnhr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
