@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@mipmap/Flextfit_icon" />
+        app:srcCompat="@mipmap/flexfit_icon" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField1"

@@ -13,9 +13,6 @@
             android:name=".Activity_login"
             android:exported="true" />
         <activity
-            android:name=".Activity_ContactUs"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
     </application>
