@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_login">
+    tools:context=".activity_login"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@mipmap/Flextfit_icon" />
+        app:srcCompat="@mipmap/flextfit_icon" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField1"
@@ -33,7 +34,7 @@
         app:layout_constraintVertical_bias="0.47">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText1"
+            android:id="@+id/textInputEmail"
             android:layout_width="match_parent"
             android:layout_height="54dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,7 +45,7 @@
         android:layout_width="311dp"
         android:layout_height="79dp"
         android:hint="Password"
-        app:endIconDrawable="@mipmap/Password_eyecon"
+        app:endIconDrawable="@mipmap/password_eyecon"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +55,7 @@
         app:layout_constraintVertical_bias="0.621">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText2"
+            android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="54dp" />
     </com.google.android.material.textfield.TextInputLayout>
