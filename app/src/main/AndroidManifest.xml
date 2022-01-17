@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit">
         <activity
+            android:name=".ContactusActivity"
+            android:exported="true" />
+        <activity
             android:name=".AboutusActivity"
             android:exported="true" />
         <activity
@@ -18,8 +21,8 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".MainActivity"
-            android:label="FlexFit"
-            android:exported="true">
+            android:exported="true"
+            android:label="FlexFit">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,5 +32,3 @@
     </application>
 
 </manifest>
-
-
