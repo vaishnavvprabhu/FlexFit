@@ -15,11 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class activity_intro extends AppCompatActivity {
 
     private Button lg,sg;
     private VideoView videoview;
+    private FirebaseAuth mAuth;
 
 
     //Code Author - VVP
@@ -36,6 +38,8 @@ public class activity_intro extends AppCompatActivity {
         videoview.start();
 
 
+        //Initialise mAuth
+        mAuth = FirebaseAuth.getInstance();
         //initialising buttons
         lg = (Button) findViewById(R.id.login);
         sg = (Button) findViewById(R.id.signup);
@@ -96,4 +100,15 @@ public class activity_intro extends AppCompatActivity {
         videoview.start();
     }
 
+    //Check Whether user already logged in?
+    @Override
+    protected void onStart () {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null){
+            Intent intent = new Intent(activity_intro.this,activity_home.class);
+            startActivity(intent);
+            this.finish();
+        }
+    }
 }

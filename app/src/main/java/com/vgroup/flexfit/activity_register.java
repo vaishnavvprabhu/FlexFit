@@ -1,5 +1,6 @@
 package com.vgroup.flexfit;
 
+import static android.app.ProgressDialog.show;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
@@ -18,7 +19,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 
@@ -28,6 +32,8 @@ public class activity_register extends AppCompatActivity {
     private Button btn;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private DatabaseReference userinfoDb;
+    public String userid, useremail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,16 @@ public class activity_register extends AppCompatActivity {
                     @Override
                     public void onComplete(@Nonnull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                //Getting Uid
+                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                userid = currentFirebaseUser.getUid();
+                                useremail = currentFirebaseUser.getEmail();
+                                //Initialise and insert Uid into Realtime Database
+                                {
+                                    userinfoDb = FirebaseDatabase.getInstance().getReference().child("user");
+                                    insertUserData();
+                                }
+                                //make toast and navigate to login
                                 Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();
 
                                 Intent intent = new Intent(activity_register.this, activity_login.class);
@@ -96,5 +112,21 @@ public class activity_register extends AppCompatActivity {
 
                     }
                 });
+    }
+    private void insertUserData(){
+        String email = useremail;
+        String useridentity = userid;
+        int age = 0;
+        int weight = 0;
+        int height = 0;
+        int BMI = 0;
+        String BMI_range = "0";
+        String pref_workout = "0";
+
+        User user = new User(email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
+
+        userinfoDb.push().setValue(user);
+
+        Toast.makeText(getApplicationContext(),"Data Inserted"+user+" ",Toast.LENGTH_LONG).show();
     }
 }
