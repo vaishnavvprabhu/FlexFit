@@ -1,5 +1,10 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+<<<<<<<<< Temporary merge branch 1
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+=========
  <dimen name="activity_horizontal_margin">16dp</dimen>
  <dimen name="activity_vertical_margin">16dp</dimen>
+>>>>>>>>> Temporary merge branch 2
 </resources>
