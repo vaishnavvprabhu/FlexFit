@@ -121,7 +121,7 @@
         android:layout_height="51dp"
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
-        android:text="@string/next"
+        android:text="next"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
