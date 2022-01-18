@@ -16,7 +16,7 @@
             android:name=".activity_setup"
             android:exported="true" />
         <activity
-            android:name=".Activity_ContactUs"
+            android:name=".activity_contact"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
