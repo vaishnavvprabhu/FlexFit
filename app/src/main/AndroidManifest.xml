@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit">
         <activity
+            android:name=".activity_forgotpassword"
+            android:exported="true" />
+        <activity
             android:name=".activity_contact"
             android:exported="true" />
         <activity
