@@ -79,6 +79,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunitosans_bold"
         android:text="Login"
+        android:textColor="@color/black"
         android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
