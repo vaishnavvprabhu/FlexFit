@@ -40,7 +40,7 @@ public class activity_contact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Intent intent = new Intent (Intent.ACTION_CALL , Uri.parse("mailto:" + "flexfit@gmail.com"));
+                    Intent intent = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + "flexfit@gmail.com"));
                     intent.putExtra(Intent.EXTRA_SUBJECT, "your_subject");
 
                     startActivity(intent);
