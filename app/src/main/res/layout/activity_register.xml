@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_login"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    tools:context=".activity_login">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -81,12 +80,12 @@
 
     <Button
         android:id="@+id/containedButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="129dp"
         android:layout_height="51dp"
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
-        android:text="@string/register"
+        android:text="@string/next"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

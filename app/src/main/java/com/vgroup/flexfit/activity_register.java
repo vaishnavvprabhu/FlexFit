@@ -22,9 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.io.IOException;
+import com.vgroup.flexfit.data.User;
 
 public class activity_register extends AppCompatActivity {
 
@@ -91,16 +89,11 @@ public class activity_register extends AppCompatActivity {
                                 FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                                 userid = currentFirebaseUser.getUid();
                                 useremail = currentFirebaseUser.getEmail();
-                                //Initialise and insert Uid into Realtime Database
-                                {
-                                    userinfoDb = FirebaseDatabase.getInstance().getReference().child("user");
-                                    insertUserData();
-                                }
-                                //make toast and navigate to login
-                                Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();
+                                //Navigate User to details page
+                                Intent getmoredetails = new Intent(activity_register.this,activity_setup.class);
+                                startActivity(getmoredetails);
 
-                                Intent intent = new Intent(activity_register.this, activity_login.class);
-                                startActivity(intent);
+
                             }
                             else{
                                 //Reg fail toast make
