@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.data;
 
 public class User {
 
@@ -7,11 +7,11 @@ public class User {
         int age;
         int weight;
         int height;
-        int BMI;
+        double BMI;
         String BMI_range;
         String pref_workout;
 
-        public User(String email, String useridentity, int age, int weight, int height, int BMI, String BMI_range, String pref_workout) {
+        public User(String email, String useridentity, int age, int weight, int height, double BMI, String BMI_range, String pref_workout) {
                 this.email = email;
                 this.useridentity = useridentity;
                 this.age = age;
@@ -41,7 +41,7 @@ public class User {
                 return height;
         }
 
-        public int getBMI() {
+        public double getBMI() {
                 return BMI;
         }
 
