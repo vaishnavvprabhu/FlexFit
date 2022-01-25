@@ -88,7 +88,7 @@ public class activity_login extends AppCompatActivity {
                                  Toast.makeText(getApplicationContext(),"Login Successful.", Toast.LENGTH_LONG).show();
 
                                  //Navigate User to Home page on successful login
-                                 Intent intent = new Intent(activity_login.this,MainActivity.class);
+                                 Intent intent = new Intent(activity_login.this,activity_home.class);
                                  startActivity(intent);
                              }
 
