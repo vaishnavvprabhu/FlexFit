@@ -41,8 +41,8 @@ public class activity_login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialising all components through IDs
-        emailTextView = findViewById(R.id.textInputEmail);
-        passwordTextView = findViewById(R.id.textInputPassword);
+        emailTextView = findViewById(R.id.textInputEditText1);
+        passwordTextView = findViewById(R.id.textInputEditText2);
 
         btn = findViewById(R.id.containedButton);
 
@@ -88,7 +88,7 @@ public class activity_login extends AppCompatActivity {
                                  Toast.makeText(getApplicationContext(),"Login Successful.", Toast.LENGTH_LONG).show();
 
                                  //Navigate User to Home page on successful login
-                                 Intent intent = new Intent(activity_login.this,MainActivity.class);
+                                 Intent intent = new Intent(activity_login.this,activity_home.class);
                                  startActivity(intent);
                              }
 
