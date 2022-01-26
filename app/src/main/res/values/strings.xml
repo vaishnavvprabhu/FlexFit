@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FlexFit</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -14,4 +14,5 @@
     <string name="label">Email</string>
     <string name="register">Register</string>
     <string name="next">Next</string>
+    <string name="continue_btn">Continue</string>
 </resources>

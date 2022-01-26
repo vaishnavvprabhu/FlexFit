@@ -21,11 +21,20 @@
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_register.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_setup.xml" value="0.2609375" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/contacts_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/ic_alternative_logo.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_aboutus.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_contact.xml" value="0.25" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_exercise_genres.xml" value="0.25" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_forgotpassword.xml" value="0.25" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_intro.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_register.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_register.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/card_exercises.xml" value="0.25" />
       </map>
     </option>
   </component>

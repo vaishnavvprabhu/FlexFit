@@ -27,7 +27,7 @@ public class activity_home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_home);
 
         //Getting the context
 /*        mDatabase= FirebaseDatabase.getInstance().getReference().child("Global");

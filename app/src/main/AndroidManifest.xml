@@ -29,6 +29,9 @@
             android:name=".activity_register"
             android:exported="true" />
         <activity
+            android:name=".activity_exercise_genres"
+            android:exported="true" />
+        <activity
             android:name=".activity_intro"
             android:exported="true"
             android:label="FlexFit">
