@@ -51,9 +51,7 @@ public class activity_setup extends AppCompatActivity {
         //Set On Click listener
         nxt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { addDetailsToNewUser();
-                Intent intent = new Intent(activity_setup.this, activity_exercise_genres.class);
-                startActivity(intent);}
+            public void onClick(View v) { addDetailsToNewUser(); }
         });
 
 

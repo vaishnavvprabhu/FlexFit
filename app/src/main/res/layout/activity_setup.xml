@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.057"
-        app:srcCompat="@drawable/flexfit_icon" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView7"
