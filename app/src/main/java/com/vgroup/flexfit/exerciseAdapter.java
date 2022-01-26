@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class personAdapter extends FirebaseRecyclerAdapter<exercises, personAdapter.personsViewholder> {
+public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exerciseAdapter.exercisesViewholder> {
 
-    public personAdapter(
+    public exerciseAdapter(
             @NonNull FirebaseRecyclerOptions<exercises> options)
     {
         super(options);
@@ -21,7 +21,7 @@ public class personAdapter extends FirebaseRecyclerAdapter<exercises, personAdap
 
     //Function to bind the view in Card View (exercise.xml) with data in the model class - exercises.class
     @Override
-    protected void onBindViewHolder(@NonNull personsViewholder holder, int position, @NonNull exercises model)
+    protected void onBindViewHolder(@NonNull exercisesViewholder holder, int position, @NonNull exercises model)
     {
         //Data Entry
         holder.exname.setText(model.getName());
@@ -32,16 +32,16 @@ public class personAdapter extends FirebaseRecyclerAdapter<exercises, personAdap
 
     @NonNull
     @Override
-    public personsViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public exercisesViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.exercises, parent, false);
-        return new personAdapter.personsViewholder(view);
+        return new exerciseAdapter.exercisesViewholder(view);
     }
 
     //Sub Class for Reference
-    class personsViewholder extends RecyclerView.ViewHolder{
+    class exercisesViewholder extends RecyclerView.ViewHolder{
         TextView exname, extt, eximage;
 
-        public personsViewholder(@NonNull View itemView) {
+        public exercisesViewholder(@NonNull View itemView) {
             super(itemView);
 
             exname = (TextView) itemView.findViewById(R.id.ex_name);

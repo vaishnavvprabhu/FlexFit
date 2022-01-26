@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerview;
 
     //Object of adapter Class
-    personAdapter adapter;
+    exerciseAdapter adapter;
 
     //Object of Firebase Realtime db
     DatabaseReference mbase;
@@ -32,13 +32,13 @@ public class HomeActivity extends AppCompatActivity {
         recyclerview = findViewById(R.id.recycler1);
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
 
         //Connect object (of the req adapter) to adapter class itself
-        adapter = new personAdapter(options);
+        adapter = new exerciseAdapter(options);
         //recycler connect to adapter class
         recyclerview.setAdapter(adapter);
     }
