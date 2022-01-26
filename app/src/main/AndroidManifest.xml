@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vgroup.flexfit">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +13,14 @@
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".HomeScreenActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home_screen" />
+        <activity
             android:name=".activity_login"
             android:exported="true" />
         <activity
-            android:name=".activity_home"
+            android:name=".HomeActivity"
             android:exported="true" />
         <activity
             android:name=".activity_setup"

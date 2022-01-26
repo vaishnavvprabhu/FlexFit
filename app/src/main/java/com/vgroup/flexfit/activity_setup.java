@@ -21,7 +21,7 @@ import com.vgroup.flexfit.data.User;
 
 public class activity_setup extends AppCompatActivity {
 
-    public int inage, inheight, inweight;
+    public double inage, inheight, inweight;
     private TextInputEditText ageTextView, heightTextView, weightTextView;
     private Button nxt;
     private ProgressBar progressBar;
@@ -60,12 +60,16 @@ public class activity_setup extends AppCompatActivity {
     }
 
     private void addDetailsToNewUser() {
+        String nage, nheight, nweight;
 
+        nage = String.valueOf(ageTextView);
+        nheight = String.valueOf(heightTextView);
+        nweight = String.valueOf(weightTextView);
         //Accept Value of fields
 
-        inage = Integer.parseInt(String.valueOf(ageTextView));
-        inheight = Integer.parseInt(String.valueOf(heightTextView));
-        inweight = Integer.parseInt(String.valueOf(weightTextView));
+        inage = Double.parseDouble(ageTextView.getText().toString());
+        inheight = Double.parseDouble(heightTextView.getText().toString());
+        inweight = Double.parseDouble(weightTextView.getText().toString());
 
         if (ageTextView.length() < 0) {
             Toast.makeText(getApplicationContext(),"Please Enter Age", Toast.LENGTH_LONG) .show();
@@ -121,12 +125,13 @@ public class activity_setup extends AppCompatActivity {
         String useridentity = userid;
 
 
-        int age = inage;
-        int weight = inweight;
-        int height = inheight/100;
+        double age = inage;
+        double weight = inweight;
+        double height = inheight/100;
 
         //Calculate BMI Range
-        double BMI = weight / Math.pow(height, 2);
+        double heightsquared = height*height;
+        double BMI = weight / heightsquared;
         String BMI_range;
         if (BMI<18.5){
             BMI_range = "Under Weight";
