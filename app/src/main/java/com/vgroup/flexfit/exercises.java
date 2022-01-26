@@ -1,12 +1,15 @@
-package com.vgroup.flexfit.data;
+package com.vgroup.flexfit;
 
-public class FetchExercises {
+public class exercises {
     private String name;
-    private String time_taken;
+    private Long time_taken;
     private String image;
 
-    public FetchExercises(String name, String time_taken, String image){
-
+    public exercises(){
+//            public exercises(String name, String time_taken, String image){
+//            this.name = name;
+//            this.time_taken = time_taken;
+//            this.image= image;
     }
 
     public String getName() {
@@ -17,11 +20,11 @@ public class FetchExercises {
         this.name = name;
     }
 
-    public String getTime_taken() {
+    public Long getTime_taken() {
         return time_taken;
     }
 
-    public void setTime_taken(String time_taken) {
+    public void setTime_taken(Long time_taken) {
         this.time_taken = time_taken;
     }
 
