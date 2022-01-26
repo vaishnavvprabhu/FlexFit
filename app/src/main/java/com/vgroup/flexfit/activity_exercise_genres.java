@@ -36,13 +36,7 @@ MaterialCardView Hcard, Scard, Fcard;
                 return true;
             }
         });
-        Fcard.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Fcard.setChecked(true);
-                return true;
-            }
-        });
+        
     }
 }
 
