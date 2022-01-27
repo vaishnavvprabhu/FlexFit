@@ -1,10 +1,7 @@
 package com.vgroup.flexfit;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +14,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
+import java.util.Calendar;
 import java.util.Objects;
 
-public class HomeActivity extends AppCompatActivity {
-
+public class WorkoutActivity extends AppCompatActivity {
     private RecyclerView recyclerview;
 
+    private TextView title,daynum;
     //Object of adapter Class
     exerciseAdapter adapter;
 
@@ -33,21 +31,29 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.sub_activity_workout);
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
 
+        title = (TextView) findViewById(R.id.actionbar_title_text);
+        daynum = (TextView) findViewById(R.id.daynumber);
+        title.setText("Workout");
 
+        //Get Day of the week, Use it for Query & display on text field
+        int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        String dayToRetrieve = "day"+dayOfWeek;
+        String dayToDisplay = "Day "+dayOfWeek;
+        daynum.setText(dayToDisplay);
 
         //Create a instance of db & get instance
-        mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/wg/day1");
+        mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/wg/"+dayToRetrieve);
 
-        recyclerview = findViewById(R.id.recycler1);
+        recyclerview = (RecyclerView) findViewById(R.id.recycler_workout_view);
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
