@@ -41,7 +41,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Custom Bottom App Bar Library
-    implementation 'me.majiajie:pager-bottom-tab-strip:2.4.0'
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.8'
 
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'

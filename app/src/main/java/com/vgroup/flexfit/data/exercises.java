@@ -3,6 +3,10 @@ package com.vgroup.flexfit.data;
 public class exercises {
     private String name;
     private Long time_taken;
+    private String desc;
+    private String equipment;
+    private Long calories;
+    private String difficulty;
     private String image;
 
     public exercises(){
@@ -24,9 +28,39 @@ public class exercises {
         return time_taken;
     }
 
-    public void setTime_taken(Long time_taken) {
-        this.time_taken = time_taken;
+
+    public String getDesc() {
+        return desc;
     }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
+    }
+
+    public Long getCalories() {
+        return calories;
+    }
+
+    public void setCalories(Long calories) {
+        this.calories = calories;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
 
     public String getImage() {
         return image;
