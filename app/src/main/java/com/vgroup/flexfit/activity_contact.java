@@ -16,7 +16,7 @@ public class activity_contact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactus);
+        setContentView(R.layout.activity_contact);
         twt = findViewById(R.id.twitter);
         insta = findViewById(R.id.instagram);
         gmail = findViewById(R.id.gmail);

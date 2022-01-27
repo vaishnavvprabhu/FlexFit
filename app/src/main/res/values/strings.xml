@@ -12,4 +12,11 @@
     <string name="login">Log In</string>
     <string name="signup">Sign Up</string>
     <string name="label">Email</string>
+    <string name="register">Register</string>
+    <string name="next">Next</string>
+    <string name="continue_btn">Continue</string>
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

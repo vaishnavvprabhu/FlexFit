@@ -1,17 +1,17 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.data;
 
 public class User {
 
         String email;
         String useridentity;
-        int age;
-        int weight;
-        int height;
-        int BMI;
+        double age;
+        double weight;
+        double height;
+        double BMI;
         String BMI_range;
         String pref_workout;
 
-        public User(String email, String useridentity, int age, int weight, int height, int BMI, String BMI_range, String pref_workout) {
+        public User(String email, String useridentity, double age, double weight, double height, double BMI, String BMI_range, String pref_workout) {
                 this.email = email;
                 this.useridentity = useridentity;
                 this.age = age;
@@ -29,19 +29,19 @@ public class User {
                 return useridentity;
         }
 
-        public int getAge() {
+        public double getAge() {
                 return age;
         }
 
-        public int getWeight() {
+        public double getWeight() {
                 return weight;
         }
 
-        public int getHeight() {
+        public double getHeight() {
                 return height;
         }
 
-        public int getBMI() {
+        public double getBMI() {
                 return BMI;
         }
 

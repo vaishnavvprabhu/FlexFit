@@ -16,15 +16,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@mipmap/flexfit_icon" />
+        app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField3"
+        android:id="@+id/emailtf"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"
         android:hint="Email"
-        android:textColorHint="#007AFF"
+        android:textColorHint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
@@ -33,13 +33,14 @@
         app:layout_constraintVertical_bias="0.47">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEmail2"
+            android:id="@+id/textInputEditText1"
             android:layout_width="match_parent"
-            android:layout_height="54dp" />
+            android:layout_height="54dp"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField2"
+        android:id="@+id/passwordtf"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"
@@ -54,24 +55,28 @@
         app:layout_constraintVertical_bias="0.621">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputPassword"
+            android:id="@+id/textInputEditText2"
             android:layout_width="match_parent"
-            android:layout_height="54dp" />
+            android:layout_height="54dp"
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/containedButton"
-        android:layout_width="97dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
-        android:backgroundTint="#007AFF"
-        android:fontFamily="@font/nunitosans_black"
+        android:background="@drawable/contacts_button"
+        android:fontFamily="@font/nunitosans_regular"
         android:text="Login"
-        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.939" />
 
     <TextView
         android:id="@+id/textView2"
@@ -79,6 +84,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunitosans_bold"
         android:text="Login"
+        android:textColor="@color/black"
         android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
