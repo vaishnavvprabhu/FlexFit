@@ -24,8 +24,6 @@ import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.IOException;
-
 public class activity_register extends AppCompatActivity {
 
     private TextInputEditText emailTextView, passwordTextView, nameTextView;
@@ -48,7 +46,7 @@ public class activity_register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialising all components through IDs
-        emailTextView = findViewById(R.id.textInputEmail);
+        emailTextView = findViewById(R.id.textInputEmail2);
         passwordTextView = findViewById(R.id.textInputPassword);
 
         btn = findViewById(R.id.containedButton);

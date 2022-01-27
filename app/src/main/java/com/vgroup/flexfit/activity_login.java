@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -41,7 +40,7 @@ public class activity_login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialising all components through IDs
-        emailTextView = findViewById(R.id.textInputEmail);
+        emailTextView = findViewById(R.id.textInputEmail2);
         passwordTextView = findViewById(R.id.textInputPassword);
 
         btn = findViewById(R.id.containedButton);

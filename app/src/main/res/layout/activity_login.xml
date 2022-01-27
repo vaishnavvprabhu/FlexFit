@@ -19,7 +19,7 @@
         app:srcCompat="@mipmap/flexfit_icon" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField1"
+        android:id="@+id/outlinedTextField3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.47">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEmail"
+            android:id="@+id/textInputEmail2"
             android:layout_width="match_parent"
             android:layout_height="54dp" />
     </com.google.android.material.textfield.TextInputLayout>
