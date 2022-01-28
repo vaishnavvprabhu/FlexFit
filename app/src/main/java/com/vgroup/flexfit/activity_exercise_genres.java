@@ -21,6 +21,14 @@ MaterialCardView Hcard, Scard, Fcard;
         Scard=findViewById(R.id.card2);
         Fcard=findViewById(R.id.card3);
 
+        Hcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!Hcard.isChecked())
+                    Hcard.setChecked(true);
+            }
+        });
+
 
         Hcard.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
