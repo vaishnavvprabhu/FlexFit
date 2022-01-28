@@ -38,7 +38,6 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
         //Fix For Scroll Lag was adding .fit().centerCrop() to picasso
         //https://stackoverflow.com/questions/33288436/recyclerview-laggy-scrolling
         Picasso.get().load(eximgview).into(holder.image);
-
     }
 
     @NonNull

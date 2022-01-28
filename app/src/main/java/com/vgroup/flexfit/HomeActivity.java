@@ -1,7 +1,12 @@
 package com.vgroup.flexfit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
+
+import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -27,6 +34,11 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.actionbar_home);
+
 
 
         //Create a instance of db & get instance
@@ -58,4 +70,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
+
+
+
 }

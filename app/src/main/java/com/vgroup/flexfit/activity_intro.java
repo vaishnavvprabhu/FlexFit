@@ -3,10 +3,13 @@ package com.vgroup.flexfit;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.VideoView;
@@ -31,12 +34,12 @@ public class activity_intro extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
         getSupportActionBar().hide();
+
         VideoView videoview = (VideoView) findViewById(R.id.videoview);
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.home);
         videoview.setVideoURI(uri);
 
         videoview.start();
-
 
         //Initialise mAuth
         mAuth = FirebaseAuth.getInstance();
