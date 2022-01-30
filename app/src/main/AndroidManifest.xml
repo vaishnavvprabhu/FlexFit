@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".HomeScreenActivity"
             android:exported="false"
@@ -24,6 +25,9 @@
             android:exported="true" />
         <activity
             android:name=".activity_setup"
+            android:exported="true" />
+        <activity
+            android:name=".AboutusActivity"
             android:exported="true" />
         <activity
             android:name=".activity_contact"
