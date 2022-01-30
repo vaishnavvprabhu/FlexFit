@@ -1,18 +1,24 @@
 package com.vgroup.flexfit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class activity_contact extends AppCompatActivity {
     ImageView gmail,twt,insta;
     Button customerSupp;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +26,40 @@ public class activity_contact extends AppCompatActivity {
         twt = findViewById(R.id.twitter);
         insta = findViewById(R.id.instagram);
         gmail = findViewById(R.id.gmail);
-        customerSupp= findViewById(R.id.custButton);
+        customerSupp = findViewById(R.id.custButton);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_diet);
+        try {
 
-        twt.setOnClickListener(new View.OnClickListener() {
+
+            bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+                @Override
+
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case (R.id.navigation_diet):
+                            return true;
+                        case (R.id.navigation_workout):
+                            startActivity(new Intent(getApplicationContext(), AboutusActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                        case (R.id.navigation_home):
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+                    }
+                    return false;
+                }
+            });
+        } catch (Exception e){
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+
+
+      twt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gotoUrl("https://twitter.com/sicsrpune?lang=en");
