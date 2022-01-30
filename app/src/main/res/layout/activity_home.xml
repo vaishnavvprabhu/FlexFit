@@ -18,19 +18,18 @@
         app:layout_constraintVertical_bias="0.235" />
 
 
-
-
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        app:iconSize="20sp"
-        app:textSize="14sp"
         app:backgroundColor="#7000FF"
+        app:iconSize="20sp"
+        app:indicatorColor="#886AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:indicatorColor="#886AFF"/>
+        app:textSize="14sp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

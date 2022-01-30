@@ -1,7 +1,10 @@
 package com.vgroup.flexfit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 import static com.google.android.material.theme.overlay.MaterialThemeOverlay.wrap;
@@ -11,7 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class activity_exercise_genres extends AppCompatActivity {
-MaterialCardView Hcard, Scard, Fcard;
+    private MaterialCardView Hcard, Scard, Fcard;
+    private Button cbtn;
+    //Author-Vibha
+    //Function for single card selection
+    private void SetCheckedCard(MaterialCardView checkedcard, MaterialCardView uncheckedcard,MaterialCardView uncheckedcard2){
+        checkedcard.setChecked(true);
+        uncheckedcard.setChecked(false);
+        uncheckedcard2.setChecked(false);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,31 +31,47 @@ MaterialCardView Hcard, Scard, Fcard;
         Hcard=findViewById(R.id.card1);
         Scard=findViewById(R.id.card2);
         Fcard=findViewById(R.id.card3);
+        cbtn=findViewById(R.id.containedButton);
 
         Hcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!Hcard.isChecked())
-                    Hcard.setChecked(true);
+                SetCheckedCard(Hcard,Scard,Fcard);
             }
         });
 
+        Scard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SetCheckedCard(Scard,Hcard,Fcard);
+            }
+        });
 
-        Hcard.setOnLongClickListener(new View.OnLongClickListener() {
+        Fcard.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                Hcard.setChecked(true);
-                return true;
+            public void onClick(View view) {
+                SetCheckedCard(Fcard,Scard,Hcard);
             }
         });
-        Scard.setOnLongClickListener(new View.OnLongClickListener() {
+
+        cbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                Scard.setChecked(true);
-                return true;
+            public void onClick(View view) {
+                String msg= "";
+                if(Hcard.isChecked()){
+                    msg="High Intensity (hi)";
+                }
+                else if(Scard.isChecked()){
+                    msg="Strength Building (wg)";
+                }
+                else{
+                    msg="Flexibility (fl)";
+                }
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(activity_exercise_genres.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
-        
     }
 }
 
