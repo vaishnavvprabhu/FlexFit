@@ -1,14 +1,18 @@
 package com.vgroup.flexfit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
@@ -18,6 +22,7 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class WorkoutActivity extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerview;
 
     private TextView title,daynum;
@@ -32,6 +37,7 @@ public class WorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub_activity_workout);
+
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);

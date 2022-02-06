@@ -5,13 +5,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
@@ -20,7 +23,7 @@ import com.vgroup.flexfit.data.exercises;
 import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
-
+    BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerview;
 
     //Object of adapter Class
@@ -34,8 +37,35 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+try {
 
+    bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case (R.id.navigation_home):
+                    return true;
 
+                case (R.id.navigation_workout):
+                    startActivity(new Intent(getApplicationContext(), AboutusActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case (R.id.navigation_diet):
+                    startActivity(new Intent(getApplicationContext(), activity_contact.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+
+            }
+            return false;
+        }
+    });
+
+}
+catch (Exception e){
+    Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+}
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
 
