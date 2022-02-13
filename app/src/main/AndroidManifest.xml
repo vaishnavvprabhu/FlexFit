@@ -36,6 +36,9 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
+            android:name=".DietActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity_register"
             android:exported="true" />
         <activity

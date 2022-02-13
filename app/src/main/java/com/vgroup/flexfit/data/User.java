@@ -1,5 +1,6 @@
 package com.vgroup.flexfit.data;
 
+//Author : VVP
 public class User {
 
         String email;

@@ -86,6 +86,7 @@ catch (Exception e){
         adapter = new exerciseAdapter(options);
         //recycler connect to adapter class
         recyclerview.setAdapter(adapter);
+
     }
 
     //Code to get data from database on activity start
