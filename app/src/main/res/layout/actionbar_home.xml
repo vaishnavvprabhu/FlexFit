@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout android:id="@+id/relativeLayout1"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/black"
@@ -12,22 +14,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="14dp"
-        android:fontFamily="@font/nunitosans_semibold"
-        android:text="Hello, Vaishnav!"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="130dp"
+        android:layout_toStartOf="@+id/acc_img"
+        android:fontFamily="sans-serif-medium"
+        android:text="Welcome, Vaishnav!"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/acc_img"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/acc_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/round_account_circle_white_48" />
+        android:src="@drawable/round_account_circle_white_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
         <!--android:layout_height="65dp-->
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

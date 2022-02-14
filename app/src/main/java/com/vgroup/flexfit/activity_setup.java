@@ -27,7 +27,7 @@ public class activity_setup extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     private DatabaseReference userinfoDb;
-    public String userid, useremail;
+    public String userid, useremail, username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,6 +119,13 @@ public class activity_setup extends AppCompatActivity {
     }
 
     private void insertUserData() {
+        String name = "test";
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            name = extras.getString("username");
+            //The key argument here must match that used in the other activity
+        }
+        System.out.println(name);
         String email = useremail;
         String useridentity = userid;
 
@@ -145,10 +152,10 @@ public class activity_setup extends AppCompatActivity {
         }
         String pref_workout = "0";
 
-        User user = new User(email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
+        User user = new User(name, email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
 
         userinfoDb.push().setValue(user);
 
-        Toast.makeText(getApplicationContext(), "Data Inserted" + user + " ", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Data Inserted" + user + " ,"+name, Toast.LENGTH_LONG).show();
     }
 }
