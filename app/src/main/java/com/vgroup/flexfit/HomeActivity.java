@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
@@ -25,12 +29,18 @@ import java.util.Objects;
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerview;
+    FirebaseDatabase firebaseDatabase;
+
+    DatabaseReference databasetReference = FirebaseDatabase.getInstance().getReference();
+    TextView user;
+    public String userid;
 
     //Object of adapter Class
     exerciseAdapter adapter;
 
     //Object of Firebase Realtime db
     DatabaseReference mbase;
+
 
     //Code Author - VVP
     @Override
@@ -66,9 +76,15 @@ try {
 catch (Exception e){
     Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
 }
+
+        //Object for username
+        Query query = databasetReference.child("user").equalTo(userid);
+
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
-
+        user = findViewById(R.id.actionbar_title_text);
+        System.out.println(query);
 
 
 
@@ -103,6 +119,11 @@ catch (Exception e){
         adapter.stopListening();
     }
 
+    private void getData(){
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        userid = currentFirebaseUser.getUid();
 
+
+    }
 
 }

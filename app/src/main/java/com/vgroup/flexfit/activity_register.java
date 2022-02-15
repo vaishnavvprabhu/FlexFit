@@ -96,8 +96,6 @@ public class activity_register extends AppCompatActivity {
                                 getmoredetails.putExtra("username",name);
                                 System.out.println(name);
                                 startActivity(getmoredetails);
-
-
                             }
                             else{
                                 //Reg fail toast make
