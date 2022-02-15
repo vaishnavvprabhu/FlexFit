@@ -126,9 +126,9 @@ public class activity_exercise_genres extends AppCompatActivity {
                 }
 
                 addDetailsToNewUser();
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
     }
@@ -182,7 +182,8 @@ public class activity_exercise_genres extends AppCompatActivity {
 
         User user = new User(name, email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
 
-        userinfoDb.push().setValue(user);
+        System.out.println(user);
+        userinfoDb.child(user.getUseridentity()).setValue(user);
 
         Toast.makeText(getApplicationContext(), "Data Inserted" + " ,"+name +". Now Select Your Preferred Exercise Type.", Toast.LENGTH_LONG).show();
     }
