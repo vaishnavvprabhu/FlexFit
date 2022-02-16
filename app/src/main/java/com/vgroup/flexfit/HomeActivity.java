@@ -54,6 +54,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+    //nav bar
+
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         try {
@@ -66,11 +68,11 @@ public class HomeActivity extends AppCompatActivity {
                             return true;
 
                         case (R.id.navigation_workout):
-                            startActivity(new Intent(getApplicationContext(), AboutusActivity.class));
+                            startActivity(new Intent(getApplicationContext(), WorkoutActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
                         case (R.id.navigation_diet):
-                            startActivity(new Intent(getApplicationContext(), activity_contact.class));
+                            startActivity(new Intent(getApplicationContext(), DietActivity.class));
                             overridePendingTransition(0, 0);
                             return true;
 
@@ -83,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
+        //nav bar
 
         //Object for username
         Query query = databasetReference.child("user").equalTo(userid);
