@@ -126,14 +126,13 @@ public class activity_exercise_genres extends AppCompatActivity {
                 }
 
                 addDetailsToNewUser();
-                /*Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
-                startActivity(intent);*/
+                startActivity(intent);
             }
         });
     }
 
-
+//AUTHOR : VVP {
     private void addDetailsToNewUser(){
 
         //create/register new user
@@ -152,8 +151,7 @@ public class activity_exercise_genres extends AppCompatActivity {
                 insertUserData();
             }
             //make toast and navigate to login
-            Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(getApplicationContext(), "Registration Successful! Now Login using your details.", Toast.LENGTH_LONG).show();
 
         }
         catch (Exception e) {
@@ -184,8 +182,6 @@ public class activity_exercise_genres extends AppCompatActivity {
 
         System.out.println(user);
         userinfoDb.child(user.getUseridentity()).setValue(user);
-
-        Toast.makeText(getApplicationContext(), "Data Inserted" + " ,"+name +". Now Select Your Preferred Exercise Type.", Toast.LENGTH_LONG).show();
     }
 }
-
+//}

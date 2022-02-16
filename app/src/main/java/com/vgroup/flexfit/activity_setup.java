@@ -106,7 +106,7 @@ public class activity_setup extends AppCompatActivity {
                 insertUserData();
             }
             //make toast and navigate to login
-            Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();
+/*            Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();*/
 
 
         }

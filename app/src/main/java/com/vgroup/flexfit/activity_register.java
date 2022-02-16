@@ -123,6 +123,6 @@ public class activity_register extends AppCompatActivity {
 
         userinfoDb.push().setValue(user);
 
-        Toast.makeText(getApplicationContext(),"Data Inserted"+name+" ",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Welcome On Board "+name+"! Please fill these details.",Toast.LENGTH_LONG).show();
     }
 }

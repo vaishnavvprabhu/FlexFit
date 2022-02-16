@@ -15,19 +15,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginHorizontal="130dp"
+        android:layout_marginRight="130dp"
         android:layout_toStartOf="@+id/acc_img"
         android:fontFamily="sans-serif-medium"
-        android:text="Welcome, Vaishnav!"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="20sp"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/acc_img"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/acc_img"
@@ -36,7 +36,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/round_account_circle_white_48"
+        android:src="@drawable/outline_account_circle_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
