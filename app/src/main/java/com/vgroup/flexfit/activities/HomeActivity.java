@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 

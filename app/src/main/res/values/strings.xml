@@ -23,4 +23,6 @@
     <string name="diet">Diet</string>
     <string name="recommend">Recommended</string>
     <string name="today_s_exercises">Today\'s Exercises</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

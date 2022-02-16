@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
@@ -17,11 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.data.User;
 
-import static com.google.android.material.theme.overlay.MaterialThemeOverlay.wrap;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
