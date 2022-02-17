@@ -77,7 +77,7 @@ public class DietActivity extends AppCompatActivity {
 
         title = (TextView) findViewById(R.id.actionbar_title_text);
         daynum = (TextView) findViewById(R.id.daynumber);
-        title.setText("Workout");
+        title.setText("Diet");
 
         //Get Day of the week, Use it for Query & display on text field
         int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
