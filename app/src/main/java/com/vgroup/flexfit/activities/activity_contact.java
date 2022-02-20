@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vgroup.flexfit.R;
 
 public class activity_contact extends AppCompatActivity {
     ImageView gmail,twt,insta;

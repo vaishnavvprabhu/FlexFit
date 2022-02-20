@@ -3,54 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/btn_blue.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/contacts_button.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/equalsto_btn.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/exercise_stroke_style.xml" value="0.17447916666666666" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_alternative_logo.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_vector.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/intro_button_login.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/intro_button_signup.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/outline_account_circle_24.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/overlay.xml" value="0.2265625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/round_account_circle_24.xml" value="0.39010416666666664" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/font/nunitosans.xml" value="0.2552083333333333" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/actionbar_home.xml" value="0.5" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_aboutus.xml" value="0.2609375" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_contact_us.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_contactus.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_exercise_genres.xml" value="0.33" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_home_screen.xml" value="0.37395833333333334" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_intro.xml" value="0.28370786516853935" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_register.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_setup.xml" value="0.2609375" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/card_exercises.xml" value="0.33" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/diet.xml" value="0.25" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/exercises.xml" value="0.33" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_dashboard.xml" value="0.37395833333333334" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_home.xml" value="0.37395833333333334" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_notifications.xml" value="0.37395833333333334" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/home.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/person.xml" value="0.18135764944275581" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/sub_activity_diet.xml" value="0.265531914893617" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/sub_activity_workout.xml" value="0.25" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/workout.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_fragment.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_home.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_main.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_diet.xml" value="0.3179347826086957" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_home.xml" value="0.3111413043478261" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_home2.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_workout.xml" value="0.3179347826086957" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

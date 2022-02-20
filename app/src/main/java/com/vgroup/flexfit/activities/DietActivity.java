@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.food.dietAdapter;
 import com.vgroup.flexfit.data.diet;
 
