@@ -1,7 +1,9 @@
 package com.vgroup.flexfit.data;
 
+//Author : VVP
 public class User {
 
+        String name;
         String email;
         String useridentity;
         double age;
@@ -11,7 +13,8 @@ public class User {
         String BMI_range;
         String pref_workout;
 
-        public User(String email, String useridentity, double age, double weight, double height, double BMI, String BMI_range, String pref_workout) {
+        public User(String name, String email, String useridentity, double age, double weight, double height, double BMI, String BMI_range, String pref_workout) {
+                this.name = name;
                 this.email = email;
                 this.useridentity = useridentity;
                 this.age = age;
@@ -22,6 +25,7 @@ public class User {
                 this.pref_workout = pref_workout;
         }
 
+        public String getName() {return name;}
         public String getEmail() {
                 return email;
         }

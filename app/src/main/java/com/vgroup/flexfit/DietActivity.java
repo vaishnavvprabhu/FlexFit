@@ -16,66 +16,68 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.vgroup.flexfit.adapters.exerciseAdapter;
-import com.vgroup.flexfit.data.exercises;
+import com.vgroup.flexfit.adapters.food.dietAdapter;
+import com.vgroup.flexfit.data.diet;
 
 import java.util.Calendar;
 import java.util.Objects;
 
-public class WorkoutActivity extends AppCompatActivity {
+public class DietActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private RecyclerView recyclerview;
+    private RecyclerView b_recyclerview,l_recyclerview,d_recyclerview;
 
     private TextView title,daynum;
+    //Author : VVP
     //Object of adapter Class
-    exerciseAdapter adapter;
+    dietAdapter b_adapter, l_adapter, d_adapter;
 
     //Object of Firebase Realtime db
-    DatabaseReference mbase;
+    DatabaseReference mbaseb, mbasel, mbased;
 
     //Code Author - VVP
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sub_activity_workout);
-        //nav bar
+        setContentView(R.layout.sub_activity_diet);
+    //nav bar
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.navigation_workout);
-        try{
+        bottomNavigationView.setSelectedItemId(R.id.navigation_diet);
+        try {
+
 
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
                 @Override
+
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()){
+                    switch (item.getItemId()) {
+                        case (R.id.navigation_diet):
+                            return true;
                         case (R.id.navigation_workout):
+                            startActivity(new Intent(getApplicationContext(), WorkoutActivity.class));
+                            overridePendingTransition(0, 0);
                             return true;
                         case (R.id.navigation_home):
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                            overridePendingTransition(0,0);
-                            return  true;
-                        case (R.id.navigation_diet):
-                            startActivity(new Intent(getApplicationContext(), DietActivity.class));
-                            overridePendingTransition(0,0);
+                            overridePendingTransition(0, 0);
                             return true;
                     }
                     return false;
                 }
             });
-
-
+        } catch (Exception e){
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
-        catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-        //nav bar
+//-- nav bar--
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
 
         title = (TextView) findViewById(R.id.actionbar_title_text);
         daynum = (TextView) findViewById(R.id.daynumber);
-        title.setText("Workout");
+        title.setText("Diet");
 
         //Get Day of the week, Use it for Query & display on text field
         int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
@@ -84,33 +86,52 @@ public class WorkoutActivity extends AppCompatActivity {
         daynum.setText(dayToDisplay);
 
         //Create a instance of db & get instance
-        mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/wg/"+dayToRetrieve);
+        mbaseb = FirebaseDatabase.getInstance().getReference().child("global/food/breakfast");
+        mbasel = FirebaseDatabase.getInstance().getReference().child("global/food/lunch");
+        mbased = FirebaseDatabase.getInstance().getReference().child("global/food/dinner");
 
-        recyclerview = (RecyclerView) findViewById(R.id.recycler_workout_view);
+
+        b_recyclerview = (RecyclerView) findViewById(R.id.recycler_breakfast_view);
+        l_recyclerview = (RecyclerView) findViewById(R.id.recycler_lunch_view);
+        d_recyclerview = (RecyclerView) findViewById(R.id.recycler_dinner_view);
+
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        b_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        l_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        d_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
-        FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
+        FirebaseRecyclerOptions<diet> options = new FirebaseRecyclerOptions.Builder<diet>().setQuery(mbaseb, diet.class).build();
+        FirebaseRecyclerOptions<diet> l_options = new FirebaseRecyclerOptions.Builder<diet>().setQuery(mbasel, diet.class).build();
+        FirebaseRecyclerOptions<diet> d_options = new FirebaseRecyclerOptions.Builder<diet>().setQuery(mbased, diet.class).build();
 
         //Connect object (of the req adapter) to adapter class itself
-        adapter = new exerciseAdapter(options);
+        b_adapter = new dietAdapter(options);
+        l_adapter = new dietAdapter(l_options);
+        d_adapter = new dietAdapter(d_options);
         //recycler connect to adapter class
-        recyclerview.setAdapter(adapter);
+        b_recyclerview.setAdapter(b_adapter);
+        l_recyclerview.setAdapter(l_adapter);
+        d_recyclerview.setAdapter(d_adapter);
     }
 
     //Code to get data from database on activity start
     @Override protected void onStart() {
 
         super.onStart();
-        adapter.startListening();
+        b_adapter.startListening();
+        l_adapter.startListening();
+        d_adapter.startListening();
+
     }
 
     //Stop recieving data on activity stop
     @Override protected void onStop(){
         super.onStop();
-        adapter.stopListening();
+        b_adapter.stopListening();
+        l_adapter.stopListening();
+        d_adapter.stopListening();
     }
 
 

@@ -31,7 +31,7 @@ public class activity_register extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     private DatabaseReference userinfoDb;
-    public String userid, useremail;
+    public String userid, useremail, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class activity_register extends AppCompatActivity {
         //Initialising all components through IDs
         emailTextView = findViewById(R.id.textInputEmail);
         passwordTextView = findViewById(R.id.textInputPassword);
+        nameTextView = findViewById(R.id.textInputName);
 
         btn = findViewById(R.id.containedButton);
 
@@ -61,9 +62,10 @@ public class activity_register extends AppCompatActivity {
     }
     private void registerNewUser() {
         //Accept value of fields
-        String email, password;
+        String email, password, name;
         email = emailTextView.getText().toString().trim();
         password = passwordTextView.getText().toString().trim();
+        name = nameTextView.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),"Please Enter Email", Toast.LENGTH_LONG) .show();
@@ -91,9 +93,9 @@ public class activity_register extends AppCompatActivity {
                                 useremail = currentFirebaseUser.getEmail();
                                 //Navigate User to details page
                                 Intent getmoredetails = new Intent(activity_register.this,activity_setup.class);
+                                getmoredetails.putExtra("username",name);
+                                System.out.println(name);
                                 startActivity(getmoredetails);
-
-
                             }
                             else{
                                 //Reg fail toast make
@@ -107,6 +109,7 @@ public class activity_register extends AppCompatActivity {
                 });
     }
     private void insertUserData(){
+        String name = username;
         String email = useremail;
         String useridentity = userid;
         int age = 0;
@@ -116,10 +119,10 @@ public class activity_register extends AppCompatActivity {
         String BMI_range = "0";
         String pref_workout = "0";
 
-        User user = new User(email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
+        User user = new User(name, email, useridentity, age, weight, height, BMI, BMI_range, pref_workout);
 
         userinfoDb.push().setValue(user);
 
-        Toast.makeText(getApplicationContext(),"Data Inserted"+user+" ",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Welcome On Board "+name+"! Please fill these details.",Toast.LENGTH_LONG).show();
     }
 }

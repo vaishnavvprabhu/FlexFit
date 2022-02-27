@@ -35,21 +35,20 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
-        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
-        app:checkedIconTint="@color/purple_500"
         android:layout_width="350dp"
         android:layout_height="90dp"
-        android:layout_margin="8dp"
+        android:layout_marginTop="60dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardElevation="2dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="2dp"
+        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
+        app:checkedIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,6 +70,8 @@
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
+                    android:id="@+id/hi_rec"
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -91,21 +92,20 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card2"
-        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
-        app:checkedIconTint="@color/purple_500"
         android:layout_width="350dp"
         android:layout_height="90dp"
         android:layout_margin="8dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardElevation="2dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="2dp"
+        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
+        app:checkedIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59000003">
+        app:layout_constraintTop_toBottomOf="@+id/card1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,6 +127,8 @@
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
+                    android:id="@+id/st_rec"
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -147,21 +149,22 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card3"
-        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
-        app:checkedIconTint="@color/purple_500"
         android:layout_width="350dp"
         android:layout_height="90dp"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardElevation="2dp"
+        android:layout_marginBottom="80dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="2dp"
+        app:checkedIcon="@drawable/ic_mtrl_checked_circle"
+        app:checkedIconTint="@color/purple_500"
+        app:layout_constraintBottom_toTopOf="@+id/containedButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76">
+        app:layout_constraintTop_toBottomOf="@+id/card2"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,6 +186,8 @@
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
+                    android:id="@+id/fl_rec"
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
