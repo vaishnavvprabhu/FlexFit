@@ -66,23 +66,21 @@ public class activity_exercise_genres extends AppCompatActivity {
             rec_bmi = extras.getString("BMI_range");
         }
 
-/*        if(rec_bmi == "Under Weight" || rec_bmi == "Normal")
-        {
-
-            System.out.println(rec_bmi);
+        switch (rec_bmi) {
+            case "Under Weight":
+                st.setVisibility(View.VISIBLE);
+                System.out.println(rec_bmi);
+                break;
+            case "Normal":
+                fl.setVisibility(View.VISIBLE);
+                System.out.println(rec_bmi);
+                break;
+            case "Over Weight":
+            case "Obese":
+                hi.setVisibility(View.VISIBLE);
+                System.out.println(rec_bmi);
+                break;
         }
-
-        else if(rec_bmi == "Over Weight")
-        {
-
-            System.out.println(rec_bmi);
-        }
-
-        else if(rec_bmi == "Obese")
-        {
-
-            System.out.println(rec_bmi);
-        }*/
 
 
         Hcard.setOnClickListener(new View.OnClickListener() {
