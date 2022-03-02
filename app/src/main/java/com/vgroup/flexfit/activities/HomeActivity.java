@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     DatabaseReference databasetReference = FirebaseDatabase.getInstance().getReference();
     DatabaseReference userReference;
     TextView user;
-    public String userid, greeting = null;
+    public String userid, greeting;
 
     //Object of adapter Class
     exerciseAdapter adapter;
@@ -149,9 +149,11 @@ public class HomeActivity extends AppCompatActivity {
                 Log.d(TAG, "" +  map);
                 String name = snapshot.child("name").getValue(String.class);
                 System.out.println(name);
-                getGreeting();
+                setGreeting();
+                if(greeting == null){
+                    greeting = "Greetings, ";
+                }
                 user.setText(greeting + name);
-
             }
 
             @Override
@@ -161,7 +163,9 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getGreeting(){
+    //Not Working as of now
+    //TODO:Work on Set Greeting on the home page. It shows null greeting as of now.
+    private void setGreeting(){
         int time = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         if(time>=4 && time <12){
@@ -173,8 +177,6 @@ public class HomeActivity extends AppCompatActivity {
         else if (time<=16 && time >4){
             greeting = "Good Evening, ";
         }
-        Log.d(TAG, ""+time);
+        Log.d(TAG, ""+time+" "+greeting);
     }
-
-
 }

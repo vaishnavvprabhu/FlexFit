@@ -1,5 +1,6 @@
 package com.vgroup.flexfit.adapters.food;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.activities.DietActivity;
 import com.vgroup.flexfit.data.diet;
 
 public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietViewholder> {
@@ -35,6 +37,30 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
         String ex_cal_long_to_string = String.valueOf(cal);
         holder.dtcal.setText(ex_cal_long_to_string);
         holder.dtdiff.setText(model.getDifficulty());
+
+       String dttypeclr = model.getDiet();
+        if (dttypeclr != null)
+        {
+            if (dttypeclr.startsWith("V"))
+            {
+                //Set food type badge based on nonveg or veg
+                 holder.dttypeclr.setBackgroundColor(Color.parseColor("#008000"));
+                 holder.dttype.setText("     VEG     ");
+            }
+            else if (dttypeclr.startsWith("N"))
+            {
+                holder.dttypeclr.setBackgroundColor(Color.parseColor("#D40000"));
+                holder.dttype.setText("NON VEG");
+            }
+        }
+        else
+        {
+            holder.dttypeclr.setVisibility(View.VISIBLE);
+            holder.dttype.setVisibility(View.VISIBLE);
+        }
+
+
+
         String eximgview = String.valueOf(model.getImage());
         //Picasso loads image into recycler from firebase link
         //Fix For Scroll Lag was adding .fit().centerCrop() to picasso
@@ -52,8 +78,9 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
 
     //Sub Class for Reference
     class dietViewholder extends RecyclerView.ViewHolder{
-        TextView dtname, dtcal, dtdiff;
-        ImageView image, dttype;
+        TextView dtname, dtcal, dtdiff, dttype;
+        ImageView image;
+        View dttypeclr;
 
         public dietViewholder(@NonNull View itemView) {
             super(itemView);
@@ -61,7 +88,8 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
             dtname = (TextView) itemView.findViewById(R.id.fd_name);
             dtcal = (TextView) itemView.findViewById(R.id.fd_fc);
             dtdiff = (TextView) itemView.findViewById(R.id.fd_df);
-            dttype = (ImageView) itemView.findViewById(R.id.fd_type);
+            dttype = (TextView) itemView.findViewById(R.id.fd_type);
+            dttypeclr = (View) itemView.findViewById(R.id.meal_badge_clr);
             image = (ImageView) itemView.findViewById(R.id.fd_imageview);
 
             //Set Fonts for various TextViews
