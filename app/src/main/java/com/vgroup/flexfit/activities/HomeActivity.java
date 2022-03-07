@@ -3,8 +3,12 @@ package com.vgroup.flexfit.activities;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,8 +51,27 @@ public class HomeActivity extends AppCompatActivity {
 
     //Object of Firebase Realtime db
     DatabaseReference mbase,muser,mname;
+    private Menu mMenu;
 
 
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+        this.mMenu = menu;
+        getMenuInflater().inflate(R.menu.top_bar_menu, mMenu);
+
+        MenuItem itemBack = mMenu.findItem(R.id.acc_set);
+        for(int i = 0; i < menu.size(); i++){
+            Drawable drawable = menu.getItem(i).getIcon();
+            if(drawable != null) {
+                drawable.mutate();
+                drawable.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+
+        itemBack.setVisible(true);
+
+        return true;
+    }
 
     //Code Author - VVP
     @Override
@@ -93,10 +116,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
+/*      //menu related
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_alternative_logo);// set drawable icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         user = findViewById(R.id.actionbar_title_text);
         System.out.println(query);
-
 
 
         //Create a instance of db & get instance
@@ -153,7 +181,7 @@ public class HomeActivity extends AppCompatActivity {
                 if(greeting == null){
                     greeting = "Greetings, ";
                 }
-                user.setText(greeting + name);
+                /*user.setText(greeting + name);*/
             }
 
             @Override
@@ -174,7 +202,7 @@ public class HomeActivity extends AppCompatActivity {
         else if (time>=12 && time <16){
             greeting = "Good Afternoon, ";
         }
-        else if (time<=16 && time >4){
+        else if (time>=16 || time <4){
             greeting = "Good Evening, ";
         }
         Log.d(TAG, ""+time+" "+greeting);

@@ -86,6 +86,8 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
             super(itemView);
 
             dtname = (TextView) itemView.findViewById(R.id.fd_name);
+            //for marquee to work
+            dtname.setSelected(true);
             dtcal = (TextView) itemView.findViewById(R.id.fd_fc);
             dtdiff = (TextView) itemView.findViewById(R.id.fd_df);
             dttype = (TextView) itemView.findViewById(R.id.fd_type);

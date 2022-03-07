@@ -70,7 +70,7 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
             //Typeface boldTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_semibold.ttf"); Used Earlier but due to Font not found under "java.lang.RuntimeException: Font asset not found res/font/nunitosans_regular.ttf"
             //We used stuff as per https://stackoverflow.com/questions/33888127/android-runtime-exception-font-asset-not-found
 
-/*            Typeface regularTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_regular.ttf");
+/*          Typeface regularTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_regular.ttf");
             Typeface boldTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_semibold.ttf");
             this.exname.setTypeface(boldTypeface);
             this.extt.setTypeface(regularTypeface);

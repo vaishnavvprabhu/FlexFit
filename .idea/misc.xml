@@ -3,22 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/bottom_appbar.xml" value="0.390625" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/ic_vector.xml" value="0.390625" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/intro_button_signup.xml" value="0.390625" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/meal_badge.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/outline_account_circle_24.xml" value="0.22708333333333333" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/overlay.xml" value="0.390625" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/actionbar_home.xml" value="0.1" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/drawable/top_actionbar.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/font/nunitosans.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/actionbar_home.xml" value="0.25" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_fragment.xml" value="0.37395833333333334" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_home.xml" value="0.37395833333333334" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_login.xml" value="0.37447916666666664" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/activity_main.xml" value="0.37395833333333334" />
-        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/diet.xml" value="0.33" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/diet.xml" value="0.5" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/exercises.xml" value="0.37447916666666664" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_diet.xml" value="0.3179347826086957" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_home.xml" value="0.3111413043478261" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_home2.xml" value="0.35989583333333336" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/fragment_workout.xml" value="0.3179347826086957" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/navigation.xml" value="0.2109375" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/sub_activity_diet.xml" value="0.37447916666666664" />
         <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/layout/sub_activity_workout.xml" value="0.37447916666666664" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.37447916666666664" />
+        <entry key="..\:/Users/Vaish/Study/Semester IV/Project/FlexFit/app/src/main/res/menu/top_bar_menu.xml" value="0.37447916666666664" />
       </map>
     </option>
   </component>

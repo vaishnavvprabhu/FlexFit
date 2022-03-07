@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
