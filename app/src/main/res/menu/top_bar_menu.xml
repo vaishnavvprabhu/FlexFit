@@ -14,5 +14,5 @@
         android:id="@+id/navigation_diet"
         android:icon="@drawable/round_restaurant_24"
         android:title="@string/diet" />
--->
+"-->
 </menu>

@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
@@ -52,6 +53,8 @@ public class HomeActivity extends AppCompatActivity {
     //Object of Firebase Realtime db
     DatabaseReference mbase,muser,mname;
     private Menu mMenu;
+
+
 
 
     @Override
@@ -78,7 +81,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-    //nav bar
+
+
+        //nav bar
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
@@ -138,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerview = findViewById(R.id.recycler1);
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
@@ -156,6 +161,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
+
+/*    @Override protected void onResume() {
+
+        super.onResume();
+        adapter.startListening();
+    }*/
 
     //Stop recieving data on activity stop
     @Override protected void onStop(){

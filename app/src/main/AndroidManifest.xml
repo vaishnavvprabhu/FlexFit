@@ -28,7 +28,10 @@
             android:name=".activities.activity_contact"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.InfoPage"
             android:exported="true" />
         <activity
             android:name=".activities.DietActivity"
