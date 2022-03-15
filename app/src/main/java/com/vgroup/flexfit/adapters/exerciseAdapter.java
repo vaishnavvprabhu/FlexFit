@@ -1,5 +1,6 @@
 package com.vgroup.flexfit.adapters;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.activities.HomeActivity;
+import com.vgroup.flexfit.activities.InfoPage;
 import com.vgroup.flexfit.data.exercises;
+
+import java.lang.reflect.Array;
 
 public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exerciseAdapter.exercisesViewholder> {
 
@@ -44,6 +49,29 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
         //Fix For Scroll Lag was adding .fit().centerCrop() to picasso
         //https://stackoverflow.com/questions/33288436/recyclerview-laggy-scrolling
         Picasso.get().load(eximgview).into(holder.image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //https://stackoverflow.com/questions/28528009/start-new-intent-from-recyclerviewadapter
+                Intent intent = new Intent(v.getContext(), InfoPage.class);
+
+                intent.putExtra("exercise",model.getName());
+
+                System.out.println(holder.getBindingAdapterPosition());
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        /*
+        public void onClick(View view) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            Intent intent = new Intent(HomeActivity.this, InfoPage.class);
+
+            startActivity(intent);
+        }
+    }*/
     }
 
     @NonNull
@@ -70,7 +98,7 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
             //Typeface boldTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_semibold.ttf"); Used Earlier but due to Font not found under "java.lang.RuntimeException: Font asset not found res/font/nunitosans_regular.ttf"
             //We used stuff as per https://stackoverflow.com/questions/33888127/android-runtime-exception-font-asset-not-found
 
-/*            Typeface regularTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_regular.ttf");
+/*          Typeface regularTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_regular.ttf");
             Typeface boldTypeface = Typeface.createFromAsset(itemView.getContext().getAssets(), "res/font/nunitosans_semibold.ttf");
             this.exname.setTypeface(boldTypeface);
             this.extt.setTypeface(regularTypeface);

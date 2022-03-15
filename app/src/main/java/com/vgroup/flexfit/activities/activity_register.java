@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import static android.app.ProgressDialog.show;
 import static android.content.ContentValues.TAG;
@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
 import com.google.firebase.database.DatabaseReference;
+import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.data.User;
 
 public class activity_register extends AppCompatActivity {

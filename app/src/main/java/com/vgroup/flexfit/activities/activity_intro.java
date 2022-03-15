@@ -1,24 +1,18 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.vgroup.flexfit.R;
 
 public class activity_intro extends AppCompatActivity {
 

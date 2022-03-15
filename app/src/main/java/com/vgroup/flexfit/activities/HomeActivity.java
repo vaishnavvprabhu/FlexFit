@@ -1,10 +1,14 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +29,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
@@ -39,22 +45,45 @@ public class HomeActivity extends AppCompatActivity {
     DatabaseReference databasetReference = FirebaseDatabase.getInstance().getReference();
     DatabaseReference userReference;
     TextView user;
-    public String userid, greeting = null;
+    public String userid, greeting;
 
     //Object of adapter Class
     exerciseAdapter adapter;
 
     //Object of Firebase Realtime db
     DatabaseReference mbase,muser,mname;
+    private Menu mMenu;
 
 
+
+
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+        this.mMenu = menu;
+        getMenuInflater().inflate(R.menu.top_bar_menu, mMenu);
+
+        MenuItem itemBack = mMenu.findItem(R.id.acc_set);
+        for(int i = 0; i < menu.size(); i++){
+            Drawable drawable = menu.getItem(i).getIcon();
+            if(drawable != null) {
+                drawable.mutate();
+                drawable.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+            }
+        }
+
+        itemBack.setVisible(true);
+
+        return true;
+    }
 
     //Code Author - VVP
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-    //nav bar
+
+
+        //nav bar
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
@@ -92,10 +121,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+
+/*      //menu related
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_alternative_logo);// set drawable icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         user = findViewById(R.id.actionbar_title_text);
         System.out.println(query);
-
 
 
         //Create a instance of db & get instance
@@ -109,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
         recyclerview = findViewById(R.id.recycler1);
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
@@ -127,6 +161,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
+
+/*    @Override protected void onResume() {
+
+        super.onResume();
+        adapter.startListening();
+    }*/
 
     //Stop recieving data on activity stop
     @Override protected void onStop(){
@@ -148,9 +188,11 @@ public class HomeActivity extends AppCompatActivity {
                 Log.d(TAG, "" +  map);
                 String name = snapshot.child("name").getValue(String.class);
                 System.out.println(name);
-                getGreeting();
-                user.setText(greeting + name);
-
+                setGreeting();
+                if(greeting == null){
+                    greeting = "Greetings, ";
+                }
+                /*user.setText(greeting + name);*/
             }
 
             @Override
@@ -160,7 +202,9 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getGreeting(){
+    //Not Working as of now
+    //TODO:Work on Set Greeting on the home page. It shows null greeting as of now.
+    private void setGreeting(){
         int time = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         if(time>=4 && time <12){
@@ -169,11 +213,9 @@ public class HomeActivity extends AppCompatActivity {
         else if (time>=12 && time <16){
             greeting = "Good Afternoon, ";
         }
-        else if (time<=16 && time >4){
+        else if (time>=16 || time <4){
             greeting = "Good Evening, ";
         }
-        Log.d(TAG, ""+time);
+        Log.d(TAG, ""+time+" "+greeting);
     }
-
-
 }

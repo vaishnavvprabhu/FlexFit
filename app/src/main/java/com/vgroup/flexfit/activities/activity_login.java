@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -20,6 +19,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
+import com.vgroup.flexfit.R;
 
 public class activity_login extends AppCompatActivity {
 

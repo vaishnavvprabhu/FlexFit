@@ -12,43 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
-
         <activity
-            android:name=".HomeScreenActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home_screen" />
-        <activity
-            android:name=".activity_login"
+            android:name=".activities.activity_login"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".activity_setup"
+            android:name=".activities.activity_setup"
             android:exported="true" />
         <activity
-            android:name=".AboutusActivity"
+            android:name=".activities.AboutusActivity"
             android:exported="true" />
         <activity
-            android:name=".activity_contact"
+            android:name=".activities.activity_contact"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".DietActivity"
+            android:name=".activities.InfoPage"
             android:exported="true" />
         <activity
-            android:name=".activity_register"
+            android:name=".activities.DietActivity"
             android:exported="true" />
         <activity
-            android:name=".activity_exercise_genres"
+            android:name=".activities.activity_register"
             android:exported="true" />
         <activity
-            android:name=".WorkoutActivity"
+            android:name=".activities.activity_exercise_genres"
             android:exported="true" />
         <activity
-            android:name=".activity_intro"
+            android:name=".activities.WorkoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.activity_intro"
             android:exported="true"
             android:label="FlexFit">
             <intent-filter>

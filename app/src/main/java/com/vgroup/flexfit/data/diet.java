@@ -5,6 +5,7 @@ public class diet {
     private String name;
     private Long calories;
     private String difficulty;
+    private String diet;
     private String step1;
     private String step2;
     private String step3;
@@ -49,6 +50,14 @@ public class diet {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public String getDiet() {
+        return diet;
+    }
+
+    public void setDiet(String diet) {
+        this.diet = diet;
     }
 
     public String getStep1() {

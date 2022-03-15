@@ -1,4 +1,4 @@
-package com.vgroup.flexfit;
+package com.vgroup.flexfit.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
@@ -72,10 +73,10 @@ public class WorkoutActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
+        getSupportActionBar().setElevation(0);
 
-        title = (TextView) findViewById(R.id.actionbar_title_text);
         daynum = (TextView) findViewById(R.id.daynumber);
-        title.setText("Workout");
+
 
         //Get Day of the week, Use it for Query & display on text field
         int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
