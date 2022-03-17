@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Slide">
+        <item name="android:windowEnterAnimation">@transition/slide_up</item>
+        <item name="android:windowExitAnimation">@transition/slide_down</item>
+    </style>
+</resources>
