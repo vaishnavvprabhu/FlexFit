@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.activity_recipes"
+            android:exported="false" />
+        <activity
             android:name=".activities.activity_login"
             android:exported="true" />
         <activity
