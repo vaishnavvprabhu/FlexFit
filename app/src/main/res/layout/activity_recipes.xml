@@ -1,189 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_anchor="@+id/constraintLayout2"
-        app:layout_anchorGravity="center"
-        tools:context=".activities.activity_recipes">
-
-
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:elevation="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.003">
+            android:layout_height="match_parent"
+            app:layout_anchor="@+id/constraintLayout2"
+            app:layout_anchorGravity="center"
+            tools:context=".activities.activity_recipes">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:paddingStart="6dp"
-                android:paddingEnd="16dp"
-                app:contentInsetStartWithNavigation="0dp"
-                app:navigationIcon="@drawable/black_cross" />
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.003">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="16dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:navigationIcon="@drawable/black_cross" />
 
-        <ImageView
-            android:id="@+id/imageViewR"
-            android:layout_width="411dp"
-            android:layout_height="221dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/hiit" />
+            </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/textViewLink"
-            android:layout_width="123dp"
-            android:layout_height="44dp"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/nunitosans_light"
-            android:gravity="center"
-            android:text="@string/messageWithLink"
-            android:textColorLink="#6200EE"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.055"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.406" />
+            <ImageView
+                android:id="@+id/food_img"
+                android:layout_width="match_parent"
+                android:layout_height="221dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/hiit" />
 
-        <TextView
-            android:id="@+id/instr"
-            android:layout_width="149dp"
-            android:layout_height="40dp"
-            android:fontFamily="@font/nunitosans_bold"
-            android:text="Instructions"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.103"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.47" />
+            <TextView
+                android:id="@+id/watchVid"
+                android:layout_width="110dp"
+                android:layout_height="44dp"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:gravity="center_vertical"
+                android:text="@string/messageWithLink"
+                android:textColorLink="#6200EE"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/instr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/food_img"
+                app:layout_constraintVertical_bias="0.434" />
 
-        <TextView
-            android:id="@+id/step1"
-            android:layout_width="99dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/nunitosans_black"
-            android:text="Step 1"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.52" />
+            <TextView
+                android:id="@+id/instr"
+                android:layout_width="149dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_bold"
+                android:text="Instructions"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@id/step1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/watchVid" />
 
-        <TextView
-            android:id="@+id/s1desc"
-            android:layout_width="305dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="285dp"
-            android:fontFamily="@font/nunitosans_regular"
-            android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.254"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.318" />
+            <TextView
+                android:id="@+id/step1"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 1"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="24dp"
+                app:layout_constraintBottom_toTopOf="@id/s1desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instr"
+                app:layout_constraintVertical_bias="0.52" />
 
-        <TextView
-            android:id="@+id/step2"
-            android:layout_width="99dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/nunitosans_black"
-            android:text="Step 2"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.69" />
-        <TextView
-            android:id="@+id/s2desc"
-            android:layout_width="285dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="285dp"
-            android:fontFamily="@font/nunitosans_regular"
-            android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/s1desc"
+                android:layout_width="305dp"
+                android:layout_height="101dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/step2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/step1" />
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.214"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.663" />
+            <TextView
+                android:id="@+id/step2"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 2"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/s2desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s1desc"
+                app:layout_constraintVertical_bias="0.69" />
 
-        <TextView
-            android:id="@+id/step3"
-            android:layout_width="99dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/nunitosans_black"
-            android:text="Step 3"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.858" />
+            <TextView
+                android:id="@+id/s2desc"
+                android:layout_width="285dp"
+                android:layout_height="101dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/step3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step2"
+                app:layout_constraintVertical_bias="0.663" />
 
-        <TextView
-            android:id="@+id/s3desc"
-            android:layout_width="285dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="285dp"
-            android:fontFamily="@font/nunitosans_regular"
-            android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/step3"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 3"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/s3desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s2desc"
+                app:layout_constraintVertical_bias="0.858" />
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.214"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            <TextView
+                android:id="@+id/s3desc"
+                android:layout_width="285dp"
+                android:layout_height="101dp"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step3"
+                app:layout_constraintVertical_bias="1.0" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>
