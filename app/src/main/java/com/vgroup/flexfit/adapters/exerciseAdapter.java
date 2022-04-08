@@ -16,8 +16,10 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.activities.ExerciseDescActivity;
 import com.vgroup.flexfit.activities.HomeActivity;
 import com.vgroup.flexfit.activities.InfoPage;
+import com.vgroup.flexfit.activities.WorkoutActivity;
 import com.vgroup.flexfit.data.exercises;
 
 import java.lang.reflect.Array;
@@ -55,9 +57,9 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
             @Override
             public void onClick(View v) {
                 //https://stackoverflow.com/questions/28528009/start-new-intent-from-recyclerviewadapter
-                Intent intent = new Intent(v.getContext(), InfoPage.class);
+                Intent intent = new Intent(v.getContext(), ExerciseDescActivity.class);
 
-                intent.putExtra("exercise",model.getName());
+                //intent.putExtra("exercise",model.getName());
 
                 System.out.println(holder.getBindingAdapterPosition());
                 v.getContext().startActivity(intent);
@@ -103,6 +105,7 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
             this.exname.setTypeface(boldTypeface);
             this.extt.setTypeface(regularTypeface);
             this.eximage.setTypeface(regularTypeface);*/
+
         }
     }
 }

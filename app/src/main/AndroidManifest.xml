@@ -49,6 +49,9 @@
             android:name=".activities.WorkoutActivity"
             android:exported="true" />
         <activity
+            android:name=".activities.ExerciseDescActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.activity_intro"
             android:exported="true"
             android:label="FlexFit">
