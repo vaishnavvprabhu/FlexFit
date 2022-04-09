@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.activity_recipes"
             android:exported="false" />
         <activity
@@ -47,6 +50,9 @@
             android:exported="true" />
         <activity
             android:name=".activities.WorkoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.SettingsActivity"
             android:exported="true" />
         <activity
             android:name=".activities.ExerciseDescActivity"

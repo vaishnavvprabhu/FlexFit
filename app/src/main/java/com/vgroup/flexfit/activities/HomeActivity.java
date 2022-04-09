@@ -75,6 +75,16 @@ public class HomeActivity extends AppCompatActivity {
 
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id==R.id.acc_set){
+            Intent i=new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     //Code Author - VVP
     @Override

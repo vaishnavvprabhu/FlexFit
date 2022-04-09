@@ -28,4 +28,10 @@
     <string name="hello_blank_fragment11">helo fragment 11 (home)</string>
     <string name="account_settings">Account Settings</string>
     <string name="messageWithLink"><a href="https://www.google.com/">WATCH VIDEO</a></string>
+
+    <string-array name="workout_genres">
+        <item>High Intensity</item>
+        <item>Strength Building</item>
+        <item>Flexibility</item>
+    </string-array>
 </resources>
