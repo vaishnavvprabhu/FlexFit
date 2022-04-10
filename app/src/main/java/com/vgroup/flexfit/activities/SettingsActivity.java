@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     View line;
     FloatingActionButton fab;
     Button about;
-    Button contact;
+    Button contact,logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,13 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SettingsActivity.this,activity_contact.class);
                 startActivity(intent);
+            }
+        });
+        logout=findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //firebase logout
             }
         });
     }
