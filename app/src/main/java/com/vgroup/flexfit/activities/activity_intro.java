@@ -55,8 +55,8 @@ public class activity_intro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(activity_intro.this, activity_register.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(activity_intro.this, activity_register.class);
+                startActivity(intent2);
             }
         });
 

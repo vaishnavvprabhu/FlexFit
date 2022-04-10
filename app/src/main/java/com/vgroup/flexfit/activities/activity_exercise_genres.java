@@ -11,6 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,8 +21,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.data.User;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 
 public class activity_exercise_genres extends AppCompatActivity {
@@ -49,7 +49,7 @@ public class activity_exercise_genres extends AppCompatActivity {
         Hcard=findViewById(R.id.card1);
         Scard=findViewById(R.id.card2);
         Fcard=findViewById(R.id.card3);
-        cbtn=findViewById(R.id.containedButton);
+        cbtn=findViewById(R.id.conBtn);
 
         //Hide Action bar
         getSupportActionBar().hide();

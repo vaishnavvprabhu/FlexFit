@@ -22,6 +22,10 @@
             android:name=".activities.activity_login"
             android:exported="true" />
         <activity
+            android:name=".activities.activity_exercise_timer"
+            android:exported="true" />
+
+        <activity
             android:name=".activities.HomeActivity"
             android:exported="true" />
         <activity

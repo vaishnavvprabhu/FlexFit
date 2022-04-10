@@ -1,5 +1,6 @@
 package com.vgroup.flexfit.adapters.food;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
-import com.vgroup.flexfit.activities.DietActivity;
+import com.vgroup.flexfit.activities.activity_recipes;
 import com.vgroup.flexfit.data.diet;
 
 public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietViewholder> {
@@ -66,6 +67,18 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
         //Fix For Scroll Lag was adding .fit().centerCrop() to picasso
         //https://stackoverflow.com/questions/33288436/recyclerview-laggy-scrolling
         Picasso.get().load(eximgview).into(holder.image);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), activity_recipes.class);
+
+
+
+                System.out.println(holder.getBindingAdapterPosition());
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 

@@ -14,12 +14,10 @@
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="235dp"
-            android:layout_marginBottom="492dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="14dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/flexibility" />
@@ -175,20 +173,19 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/containedButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:id="@+id/start"
             android:layout_width="129dp"
             android:layout_height="51dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/btn_blue"
             android:fontFamily="@font/nunitosans_bold"
             android:text="Start"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.938" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

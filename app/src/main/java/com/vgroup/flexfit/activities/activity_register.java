@@ -1,6 +1,5 @@
 package com.vgroup.flexfit.activities;
 
-import static android.app.ProgressDialog.show;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
@@ -51,7 +50,7 @@ public class activity_register extends AppCompatActivity {
         passwordTextView = findViewById(R.id.textInputPassword);
         nameTextView = findViewById(R.id.textInputName);
 
-        btn = findViewById(R.id.containedButton);
+        btn = findViewById(R.id.registerBtn);
 
         //Set On click listener on register
         btn.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +101,7 @@ public class activity_register extends AppCompatActivity {
                                 //Reg fail toast make
 
                                 System.out.println("Error= "+task.getException().getMessage());
-                                Toast.makeText(getApplicationContext(),"Registration Failure", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(),"Registration Failure"+task.getException().toString(), Toast.LENGTH_LONG).show();
                             }
 
 

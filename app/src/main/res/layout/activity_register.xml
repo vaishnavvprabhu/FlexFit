@@ -25,12 +25,13 @@
         android:layout_width="311dp"
         android:layout_height="79dp"
         android:hint="Email"
+        android:textColorHint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558">
+        app:layout_constraintVertical_bias="0.437">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEmail"
@@ -45,13 +46,12 @@
         android:layout_width="311dp"
         android:layout_height="79dp"
         android:hint="Name"
-        android:textColorHint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437">
+        app:layout_constraintVertical_bias="0.558">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputName"
@@ -78,14 +78,15 @@
             android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="54dp"
+            android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/containedButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:id="@+id/registerBtn"
         android:layout_width="129dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
         android:text="@string/register"
@@ -94,9 +95,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

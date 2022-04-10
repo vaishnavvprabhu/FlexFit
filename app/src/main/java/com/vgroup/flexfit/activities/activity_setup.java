@@ -2,8 +2,6 @@ package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,7 +41,7 @@ public class activity_setup extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialise Components
-        nxt = (Button) findViewById(R.id.containedButton);
+        nxt = (Button) findViewById(R.id.nxt);
         ageTextView = (TextInputEditText) findViewById(R.id.textInputAge);
         heightTextView = (TextInputEditText) findViewById(R.id.textInputHeight);
         weightTextView = (TextInputEditText) findViewById(R.id.textInputWeight);

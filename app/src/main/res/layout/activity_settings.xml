@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/horizontal_line8"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="7dp"
+        android:background="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textButton2" />
 
     <TextView
         android:id="@+id/user_greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunitosans_bold"
         android:text="Hey, User"
@@ -159,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/nunitosans_regular"
         android:text="Contact Us"
         android:textAllCaps="false"
@@ -169,19 +183,34 @@
         app:layout_constraintTop_toBottomOf="@+id/textButton1" />
 
     <Button
+        android:id="@+id/logout"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="#49454F"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line8" />
+
+    <Button
         android:id="@+id/textButton1"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/nunitosans_regular"
-        android:textColor="#49454F"
-        android:textSize="17sp"
         android:text="About Us"
         android:textAllCaps="false"
+        android:textColor="#49454F"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27"/>
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line3" />
 
     <TextView
         android:id="@+id/textView26"
@@ -293,3 +322,4 @@
         app:srcCompat="@drawable/ic_baseline_create_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
