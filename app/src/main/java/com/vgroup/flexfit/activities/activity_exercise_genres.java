@@ -33,6 +33,7 @@ public class activity_exercise_genres extends AppCompatActivity {
     private DatabaseReference userinfoDb;
     public String userid, useremail, username, msg= null;
     private TextView hi,st,fl;
+
     //Author-Vibha
     //Function for single card selection
     private void SetCheckedCard(MaterialCardView checkedcard, MaterialCardView uncheckedcard,MaterialCardView uncheckedcard2){
