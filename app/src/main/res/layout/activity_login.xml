@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailtf"
+        android:id="@+id/outlineTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="311dp"
         android:layout_height="79dp"
