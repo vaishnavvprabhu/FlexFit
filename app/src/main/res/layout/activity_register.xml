@@ -78,12 +78,12 @@
             android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="54dp"
+            android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/registerBtn"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="129dp"
         android:layout_height="51dp"
         android:layout_marginBottom="24dp"

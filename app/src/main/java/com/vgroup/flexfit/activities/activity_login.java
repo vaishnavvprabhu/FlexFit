@@ -2,8 +2,6 @@ package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,7 +44,7 @@ public class activity_login extends AppCompatActivity {
         emailTextView = findViewById(R.id.textInputEditText1);
         passwordTextView = findViewById(R.id.textInputPassword2);
 
-        btn = findViewById(R.id.registerBtn);
+        btn = findViewById(R.id.loginBtn);
 
         //Set On click listener on register
         btn.setOnClickListener(new View.OnClickListener() {

@@ -21,7 +21,7 @@ Button btn;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_desc);
         overridePendingTransition(R.anim.slide_up1, R.anim.slide_down1);
-        btn = findViewById(R.id.registerBtn);
+        btn = findViewById(R.id.start);
         btn.setOnClickListener(new View.OnClickListener() {
                                    @Override
                                    public void onClick(View view) {

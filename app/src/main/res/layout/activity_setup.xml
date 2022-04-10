@@ -118,7 +118,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/registerBtn"
+        android:id="@+id/nxt"
         android:layout_width="129dp"
         android:layout_height="51dp"
         android:layout_marginBottom="24dp"
