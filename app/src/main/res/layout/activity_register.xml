@@ -82,10 +82,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/containedButton"
+        android:id="@+id/registerBtn"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="129dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
         android:text="@string/register"
@@ -94,9 +95,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

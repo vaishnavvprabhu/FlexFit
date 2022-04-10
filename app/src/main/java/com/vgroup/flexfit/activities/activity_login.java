@@ -42,9 +42,9 @@ public class activity_login extends AppCompatActivity {
 
         //Initialising all components through IDs
         emailTextView = findViewById(R.id.textInputEditText1);
-        passwordTextView = findViewById(R.id.textInputEditText2);
+        passwordTextView = findViewById(R.id.textInputPassword2);
 
-        btn = findViewById(R.id.containedButton);
+        btn = findViewById(R.id.registerBtn);
 
         //Set On click listener on register
         btn.setOnClickListener(new View.OnClickListener() {

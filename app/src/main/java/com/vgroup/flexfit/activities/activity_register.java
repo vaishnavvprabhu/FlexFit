@@ -1,6 +1,5 @@
 package com.vgroup.flexfit.activities;
 
-import static android.app.ProgressDialog.show;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
@@ -51,7 +50,7 @@ public class activity_register extends AppCompatActivity {
         passwordTextView = findViewById(R.id.textInputPassword);
         nameTextView = findViewById(R.id.textInputName);
 
-        btn = findViewById(R.id.containedButton);
+        btn = findViewById(R.id.registerBtn);
 
         //Set On click listener on register
         btn.setOnClickListener(new View.OnClickListener() {

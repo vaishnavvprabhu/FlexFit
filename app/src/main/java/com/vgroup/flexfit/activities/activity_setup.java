@@ -41,7 +41,7 @@ public class activity_setup extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialise Components
-        nxt = (Button) findViewById(R.id.containedButton);
+        nxt = (Button) findViewById(R.id.startBtn);
         ageTextView = (TextInputEditText) findViewById(R.id.textInputAge);
         heightTextView = (TextInputEditText) findViewById(R.id.textInputHeight);
         weightTextView = (TextInputEditText) findViewById(R.id.textInputWeight);

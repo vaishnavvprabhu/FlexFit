@@ -28,16 +28,13 @@
 
     <ImageView
         android:id="@+id/exercise_img"
-        android:layout_width="wrap_content"
-        android:layout_height="235dp"
-        android:layout_marginTop="-20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/flexibility" />
+        app:srcCompat="@drawable/hiit" />
 
     <TextView
         android:id="@+id/exc_title"
@@ -72,9 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Minutes"
+        android:letterSpacing="0.03"
         android:fontFamily="@font/nunitosans_bold"
         android:gravity="center"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textColor="#000000"
         android:layout_margin="2dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,17 +83,17 @@
 
     <Button
         android:id="@+id/exitBtn"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:theme="@style/Buttontheme"
         android:layout_width="129dp"
         android:layout_height="51dp"
-        android:layout_margin="14dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_bold"
-        android:gravity="center_horizontal|top"
+        android:gravity="center_horizontal"
         android:text="Exit"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="17sp"
-        app:cornerRadius="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

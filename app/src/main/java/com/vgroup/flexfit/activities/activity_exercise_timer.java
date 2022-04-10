@@ -19,6 +19,8 @@ public class activity_exercise_timer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_timer);
         timer = findViewById(R.id.timer);
+        //Hide Action bar
+        //getSupportActionBar().hide();
         ExitBtn = findViewById(R.id.exitBtn);
         ExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,12 +31,12 @@ public class activity_exercise_timer extends AppCompatActivity {
 
             }
         });
-        int time =1;//firebase
+        double time =1.50;//firebase
         reverseTimer(time,timer);
     }
 
-    public void reverseTimer(int Minutes, final TextView timer) {
-        new CountDownTimer(Minutes*60000+1000, 1000) {
+    public void reverseTimer(double Minutes, final TextView timer) {
+        new CountDownTimer((long) (Minutes*60000+1000), 1000) {
 
             public void onTick(long millisUntilFinished) {
                 //tTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
