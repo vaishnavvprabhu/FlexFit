@@ -15,6 +15,7 @@ TextView textView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
+        overridePendingTransition(R.anim.slide_up1, R.anim.slide_down1);
         textView = findViewById(R.id.watchVid);
         try{
         textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -22,5 +23,13 @@ TextView textView;
         catch(Exception e){
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_up1,
+                R.anim.slide_down1);
     }
 }

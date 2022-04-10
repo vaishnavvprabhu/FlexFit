@@ -3,15 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/bottom_appbar.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.241" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/edit1_background.xml" value="0.241" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.241" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/line.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/outline_account_circle_24.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/round_fitness_center_24.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/round_home_24.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/drawable/round_restaurant_24.xml" value="0.241" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/actionbar_home.xml" value="0.2" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_contact.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_edit_profile.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_exercise_desc.xml" value="0.25" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_login.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_recipes.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/activity_settings.xml" value="0.25" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/dropdown_items.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/navigation.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/layout/sub_activity_diet.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/menu/top_bar_menu.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/hkgau/AndroidStudioProjects/FlexFit/app/src/main/res/mipmap-anydpi-v26/edit1.xml" value="0.1215" />
       </map>
     </option>

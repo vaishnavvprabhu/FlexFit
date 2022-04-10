@@ -54,7 +54,8 @@ public class HomeActivity extends AppCompatActivity {
     DatabaseReference mbase,muser,mname;
     private Menu mMenu;
 
-
+    private long backPressed;
+    private static final int TIME_INTERVAL = 2000;
 
 
     @Override
@@ -67,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
             Drawable drawable = menu.getItem(i).getIcon();
             if(drawable != null) {
                 drawable.mutate();
-                drawable.setColorFilter(getResources().getColor(R.color.black), PorterDuff.Mode.SRC_ATOP);
+                drawable.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
             }
         }
 
@@ -227,5 +228,22 @@ public class HomeActivity extends AppCompatActivity {
             greeting = "Good Evening, ";
         }
         Log.d(TAG, ""+time+" "+greeting);
+    }
+
+     //Back button listener.
+     //Will close the application if the back button pressed twice.
+    @Override
+    public void onBackPressed()
+    {
+        if(backPressed + TIME_INTERVAL > System.currentTimeMillis())
+        {
+            super.onBackPressed();
+            return;
+        }
+        else
+        {
+            Toast.makeText(this, "Press Back Again to Exit App", Toast.LENGTH_SHORT).show();
+        }
+        backPressed = System.currentTimeMillis();
     }
 }

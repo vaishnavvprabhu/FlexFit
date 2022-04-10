@@ -7,7 +7,7 @@
     <color name="new_colr">#A363DA</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#0B0B0B</color>
     <color name="black_overlay">#74000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#007AFF</color>
@@ -15,4 +15,5 @@
     <color name="transparent">#00000000</color>
     <color name="material_pink">#EFE2FF</color>
     <color name="material_black">#49454F</color>
+    <color name="off_white">#cccccc</color>
 </resources>
