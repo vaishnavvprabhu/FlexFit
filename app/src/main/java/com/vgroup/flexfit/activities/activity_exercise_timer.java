@@ -38,13 +38,7 @@ public class activity_exercise_timer extends AppCompatActivity {
         toolbar_title=findViewById(R.id.toolbar_title);
         Toolbar toolbar = findViewById(R.id.toolbarFlexfit);
         toolbar_title.setText("Exercise Timer");
-        toolbar.setNavigationIcon(R.drawable.back_arrow_white);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+
     }
 
     public void reverseTimer(double Minutes, final TextView timer) {

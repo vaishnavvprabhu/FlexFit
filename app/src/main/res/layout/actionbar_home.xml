@@ -5,10 +5,9 @@
     android:id="@+id/relativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/new_colr"
+    android:background="@drawable/gradient_toolbar"
     android:elevation="0dp"
-    android:theme="@style/Theme.FlexTopBar"
-    android:outlineSpotShadowColor="@color/purple_200"
+    android:theme="@style/Theme.FlexTopbar_new"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
