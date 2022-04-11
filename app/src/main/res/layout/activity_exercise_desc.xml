@@ -9,48 +9,55 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_anchor="@+id/constraintLayout"
         app:layout_anchorGravity="center">
-
+        <LinearLayout
+            android:id="@+id/linLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <include layout="@layout/toolbar_flexfit"/>
+        </LinearLayout>
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/exc_img"
             android:layout_width="match_parent"
             android:layout_height="235dp"
-            android:layout_margin="14dp"
+            android:layout_marginTop="-16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/flexibility" />
+            app:layout_constraintTop_toBottomOf="@id/linLayout"
+            app:srcCompat="@drawable/flexibility"
+           />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="243dp"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/nunitosans_bold"
+            android:gravity="top"
             android:text="Stretching"
-            android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="45sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.392" />
+            app:layout_constraintTop_toBottomOf="@+id/exc_img" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="309dp"
             android:layout_height="51dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/nunitosans_regular"
             android:text="Stretching keeps the muscles flexible, strong, and healthy"
             android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.264"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.052" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView17"

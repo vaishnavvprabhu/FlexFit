@@ -20,11 +20,11 @@ import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.food.dietAdapter;
 import com.vgroup.flexfit.data.diet;
 
-import java.util.Calendar;
 import java.util.Objects;
 
 public class DietActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    TextView toolbar_title;
     private RecyclerView b_recyclerview,l_recyclerview,d_recyclerview;
 
     private TextView title,daynum;
@@ -40,6 +40,7 @@ public class DietActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub_activity_diet);
+        toolbar_title=findViewById(R.id.toolbar_title);
     //nav bar
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -76,6 +77,8 @@ public class DietActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         getSupportActionBar().setElevation(0);
+
+
 
 
         daynum = (TextView) findViewById(R.id.daynumber);
