@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
 import com.vgroup.flexfit.adapters.exerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
@@ -90,7 +91,7 @@ public class WorkoutActivity extends AppCompatActivity {
         recyclerview = (RecyclerView) findViewById(R.id.recycler_workout_view);
 
         //Display recylcer in a linear form
-        recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();

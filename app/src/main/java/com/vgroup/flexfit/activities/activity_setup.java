@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,61 +61,74 @@ public class activity_setup extends AppCompatActivity {
     private void addDetailsToNewUser() {
         String nage, nheight, nweight;
 
-        nage = String.valueOf(ageTextView);
-        nheight = String.valueOf(heightTextView);
-        nweight = String.valueOf(weightTextView);
-        //Accept Value of fields
+        nage = ageTextView.getText().toString().trim();
+        nheight = heightTextView.getText().toString().trim();
+        nweight = weightTextView.getText().toString().trim();
 
-        inage = Double.parseDouble(ageTextView.getText().toString());
-        inheight = Double.parseDouble(heightTextView.getText().toString());
-        inweight = Double.parseDouble(weightTextView.getText().toString());
 
-        if (ageTextView.length() < 0) {
+        if (ageTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Age", Toast.LENGTH_LONG) .show();
             Log.v(TAG, "Please Enter Age");
             return;
         }
 
-        if (heightTextView.length() < 0) {
+        else if (heightTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Height", Toast.LENGTH_LONG).show();
             Log.v(TAG, "Please Enter Height");
             return;
         }
 
-        if (weightTextView.length() < 0) {
+        else if (weightTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Weight", Toast.LENGTH_LONG).show();
             Log.v(TAG, "Please Enter Weight");
             return;
         }
+        else if (TextUtils.isEmpty(nage)) {
+            Toast.makeText(getApplicationContext(),"Please Enter Correct Age", Toast.LENGTH_LONG) .show();
+            Log.v(TAG, "Please Enter Email");
+            return;
+        }
+
+        else if (TextUtils.isEmpty(nheight)) {
+            Toast.makeText(getApplicationContext(),"Please Enter Correct Height", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (TextUtils.isEmpty(nweight)) {
+            Toast.makeText(getApplicationContext(),"Please Enter Correct Weight", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else {
+            //Accept Value of fields
+            inage = Double.parseDouble(ageTextView.getText().toString());
+            inheight = Double.parseDouble(heightTextView.getText().toString());
+            inweight = Double.parseDouble(weightTextView.getText().toString());
+
+            //Starting with database data entry
+
+            //create/register new user
+            Log.v(TAG, "Starting with Data Entry");
 
 
-        //Starting with database data entry
+            try {
+                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                userid = currentFirebaseUser.getUid();
+                useremail = currentFirebaseUser.getEmail();
 
-        //create/register new user
-        Log.v(TAG, "Starting with Data Entry");
+                //Initialise and insert Uid into Realtime Database
+                {
+                    userinfoDb = FirebaseDatabase.getInstance().getReference().child("user");
+                    insertUserData();
+                }
+                //make toast and navigate to login
+                /*            Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();*/
 
 
-
-        try {
-            FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-            userid = currentFirebaseUser.getUid();
-            useremail = currentFirebaseUser.getEmail();
-
-            //Initialise and insert Uid into Realtime Database
-            {
-                userinfoDb = FirebaseDatabase.getInstance().getReference().child("user");
-                insertUserData();
+            } catch (Exception e) {
+                System.out.println("Error= " + e);
+                Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_LONG).show();
             }
-            //make toast and navigate to login
-/*            Toast.makeText(getApplicationContext(), "Registration Successful. Now Login using the details you entered.", Toast.LENGTH_LONG).show();*/
-
 
         }
-        catch (Exception e) {
-            System.out.println("Error= "+e);
-        }
-
-
     }
 
     private void insertUserData() {

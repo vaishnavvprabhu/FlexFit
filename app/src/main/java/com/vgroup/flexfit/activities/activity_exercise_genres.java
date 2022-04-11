@@ -111,20 +111,27 @@ public class activity_exercise_genres extends AppCompatActivity {
 
                 if(Hcard.isChecked()){
                     msg="hi";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
+                    startActivity(intent);
                 }
                 else if(Scard.isChecked()){
                     msg="st";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
+                    startActivity(intent);
                 }
                 else if(Fcard.isChecked()){
                     msg="fl";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "You have not selected any option. Kindly click on any type of exercise that you prefer.", Toast.LENGTH_SHORT).show();
                 }
 
-                addDetailsToNewUser();
-                Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
-                startActivity(intent);
+
             }
         });
     }

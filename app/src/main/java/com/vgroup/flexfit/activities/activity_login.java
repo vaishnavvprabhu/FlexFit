@@ -11,13 +11,17 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
 import com.vgroup.flexfit.R;
 
@@ -94,10 +98,36 @@ public class activity_login extends AppCompatActivity {
 
                              else{
                                  System.out.println("Error= "+task.getException().getMessage());
-                                 Toast.makeText(getApplicationContext(),"Login Failed. Please Check the entered details", Toast.LENGTH_LONG).show();
+
                              }
                             }
+
                         }
-                );
+                )
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                            notifyUser("Invalid password");
+                        } else if (e instanceof FirebaseAuthInvalidUserException) {
+
+                            String errorCode =
+                                    ((FirebaseAuthInvalidUserException) e).getErrorCode();
+                            if (errorCode.equals("ERROR_USER_NOT_FOUND")) {
+                                notifyUser("No matching account found");
+                            } else if (errorCode.equals("ERROR_USER_DISABLED")) {
+                                notifyUser("User account has been disabled");
+                            } else {
+                                notifyUser(e.getLocalizedMessage());
+                            }
+                        }
+                    }
+
+                    private void notifyUser(String error) {
+                        Toast.makeText(getApplicationContext(),"Login Failed: "+ error, Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
     }
 }
