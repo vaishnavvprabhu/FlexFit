@@ -17,6 +17,7 @@ TextView textView,toolbar_title;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
+        overridePendingTransition(R.anim.slide_up1, R.anim.slide_down1);
         getSupportActionBar().hide();
         toolbar_title=findViewById(R.id.toolbar_title);
         Toolbar toolbar = findViewById(R.id.toolbarFlexfit);
@@ -35,5 +36,13 @@ TextView textView,toolbar_title;
         catch(Exception e){
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_up1,
+                R.anim.slide_down1);
     }
 }

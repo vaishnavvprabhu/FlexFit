@@ -114,6 +114,14 @@ public class WorkoutActivity extends AppCompatActivity {
         adapter.stopListening();
     }
 
+    //return to Home screen on back pressed
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        overridePendingTransition(0, 0);
+    }
 
 
 }
