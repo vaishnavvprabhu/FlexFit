@@ -75,6 +75,7 @@ public class DietActivity extends AppCompatActivity {
 //-- nav bar--
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_toolbar));
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         getSupportActionBar().setElevation(0);
 
