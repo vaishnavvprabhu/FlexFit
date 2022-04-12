@@ -9,14 +9,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.vgroup.flexfit.R;
 
 public class SettingsActivity extends AppCompatActivity {
-    View line;
-    FloatingActionButton fab;
-    Button about;
-    Button contact,logout;
+    View line,line2;
+    TextView fab;
+    TextView about,contact,logout;
     TextView toolbar_title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         line=findViewById(R.id.horizontal_line);
         line.getBackground().setAlpha(20);
+        line2=findViewById(R.id.horizontal_line2);
+        line2.getBackground().setAlpha(20);
 
         getSupportActionBar().hide();
         toolbar_title=findViewById(R.id.toolbar_title);
@@ -37,7 +37,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        fab=(FloatingActionButton)findViewById(R.id.floating_action_button);
+        fab=findViewById(R.id.edit_profile);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

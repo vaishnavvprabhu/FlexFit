@@ -1,13 +1,13 @@
 package com.vgroup.flexfit.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.vgroup.flexfit.R;
 
@@ -20,6 +20,18 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        getSupportActionBar().hide();
+       // toolbar_title=findViewById(R.id.toolbar_title);
+        Toolbar toolbar = findViewById(R.id.toolbarFlexfit);
+     //   toolbar_title.setText("");
+        toolbar.setNavigationIcon(R.drawable.back_arrow_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         String workout_genres[] = {"High Intensity", "Strength Building", "Flexibility"};
         // create an array adapter and pass the required parameter
         // in our case pass the context, drop down layout , and array.
