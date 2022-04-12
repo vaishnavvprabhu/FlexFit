@@ -12,19 +12,24 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         >
-        <include layout="@layout/toolbar_flexfit"/>
+        <include layout="@layout/toolbar_flexfit"
+            />
     </LinearLayout>
-
+    <LinearLayout
+        android:id="@+id/linLayout_img"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linLayout3"           android:layout_width="match_parent"
+        android:layout_height="230dp"
+        >
     <ImageView
         android:id="@+id/exercise_img"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginTop="-16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/linLayout3"
         app:srcCompat="@drawable/hiit" />
-
+    </LinearLayout>
     <TextView
         android:id="@+id/exc_title"
         android:layout_width="243dp"
@@ -37,7 +42,7 @@
         android:textSize="46dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exercise_img" />
+        app:layout_constraintTop_toBottomOf="@id/linLayout_img" />
 
     <TextView
         android:id="@+id/timer"

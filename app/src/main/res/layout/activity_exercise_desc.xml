@@ -18,17 +18,22 @@
             >
             <include layout="@layout/toolbar_flexfit"/>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linLayout_img"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linLayout"           android:layout_width="match_parent"
+            android:layout_height="230dp"
+            >
         <ImageView
             android:id="@+id/exc_img"
             android:layout_width="match_parent"
-            android:layout_height="235dp"
-            android:layout_marginTop="-16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             app:layout_constraintTop_toBottomOf="@id/linLayout"
             app:srcCompat="@drawable/flexibility"
            />
-
+        </LinearLayout>
         <TextView
             android:id="@+id/textView"
             android:layout_width="243dp"
@@ -43,12 +48,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/exc_img" />
+            app:layout_constraintTop_toBottomOf="@+id/linLayout_img" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="309dp"
-            android:layout_height="51dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunitosans_regular"
