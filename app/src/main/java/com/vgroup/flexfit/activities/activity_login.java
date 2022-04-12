@@ -2,6 +2,7 @@ package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,6 +32,7 @@ public class activity_login extends AppCompatActivity {
     private Button btn;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +83,7 @@ public class activity_login extends AppCompatActivity {
 
         //create/register new user
         Log.v(TAG, "Starting with mAuth");
+        displayProgressDialog();
         mAuth
                 .signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
@@ -129,5 +132,12 @@ public class activity_login extends AppCompatActivity {
                 });
 
 
+    }
+    public void displayProgressDialog() {
+        progressDialog = new ProgressDialog(getBaseContext());
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Sit tight we are working on it!");
+        progressDialog.show();
     }
 }

@@ -59,7 +59,10 @@ public class exerciseAdapter extends FirebaseRecyclerAdapter<exercises, exercise
                 //https://stackoverflow.com/questions/28528009/start-new-intent-from-recyclerviewadapter
                 Intent intent = new Intent(v.getContext(), ExerciseDescActivity.class);
 
-                //intent.putExtra("exercise",model.getName());
+                intent.putExtra("name",model.getName());
+                intent.putExtra("timetaken",model.getTime_taken());
+                intent.putExtra("position",position);
+
 
                 System.out.println(holder.getBindingAdapterPosition());
                 v.getContext().startActivity(intent);

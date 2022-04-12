@@ -66,13 +66,13 @@ public class activity_setup extends AppCompatActivity {
         nweight = weightTextView.getText().toString().trim();
 
 
-        if (ageTextView == null) {
+        if (ageTextView == null || heightTextView == null || weightTextView == null || TextUtils.isEmpty(nage) || TextUtils.isEmpty(nheight) || TextUtils.isEmpty(nweight)) {
             Toast.makeText(getApplicationContext(),"Please Enter Age", Toast.LENGTH_LONG) .show();
-            Log.v(TAG, "Please Enter Age");
+            Log.v(TAG, "Please check the data entered!");
             return;
         }
-
-        else if (heightTextView == null) {
+/*
+        else if (heightTextView == null || weightTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Height", Toast.LENGTH_LONG).show();
             Log.v(TAG, "Please Enter Height");
             return;
@@ -96,7 +96,7 @@ public class activity_setup extends AppCompatActivity {
         else if (TextUtils.isEmpty(nweight)) {
             Toast.makeText(getApplicationContext(),"Please Enter Correct Weight", Toast.LENGTH_LONG).show();
             return;
-        }
+        }*/
         else {
             //Accept Value of fields
             inage = Double.parseDouble(ageTextView.getText().toString());

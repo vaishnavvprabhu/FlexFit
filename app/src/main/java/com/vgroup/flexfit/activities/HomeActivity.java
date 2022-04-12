@@ -196,13 +196,21 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
-                Log.d(TAG, "" +  map);
-                String name = snapshot.child("name").getValue(String.class);
-                System.out.println(name);
-                setGreeting();
-                if(greeting == null){
-                    greeting = "Greetings, ";
+                if(!snapshot.exists()){
+                    Toast.makeText(getApplicationContext(),"We would need some additional details about you",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(HomeActivity.this, activity_setup.class);
+                    startActivity(intent);
                 }
+                else{
+                    Log.d(TAG, "" +  map);
+                    String name = snapshot.child("name").getValue(String.class);
+                    System.out.println(name);
+                    setGreeting();
+                    if(greeting == null){
+                        greeting = "Greetings, ";
+                    }
+                }
+
                 /*user.setText(greeting + name);*/
             }
 
@@ -210,6 +218,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(HomeActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 
@@ -238,6 +247,7 @@ public class HomeActivity extends AppCompatActivity {
         if(backPressed + TIME_INTERVAL > System.currentTimeMillis())
         {
             super.onBackPressed();
+            System.exit(0);
             return;
         }
         else
