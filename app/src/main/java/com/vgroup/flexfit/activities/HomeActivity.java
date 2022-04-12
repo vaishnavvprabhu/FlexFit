@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -138,6 +137,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         getSupportActionBar().setElevation(0);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_toolbar));
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         user = findViewById(R.id.actionbar_title_text);
         System.out.println(query);

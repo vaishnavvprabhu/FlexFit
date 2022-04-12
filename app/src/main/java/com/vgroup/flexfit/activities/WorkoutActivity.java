@@ -73,6 +73,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_toolbar));
         getSupportActionBar().setElevation(0);
 
         daynum = (TextView) findViewById(R.id.daynumber);
