@@ -35,8 +35,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card1"
-        android:layout_width="350dp"
-        android:layout_height="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:checkable="true"
         android:clickable="true"
@@ -92,8 +92,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card2"
-        android:layout_width="350dp"
-        android:layout_height="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:checkable="true"
         android:clickable="true"
@@ -149,8 +149,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card3"
-        android:layout_width="350dp"
-        android:layout_height="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:checkable="true"
         android:clickable="true"
