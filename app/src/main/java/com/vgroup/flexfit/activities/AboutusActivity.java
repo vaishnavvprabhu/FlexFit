@@ -1,19 +1,11 @@
 package com.vgroup.flexfit.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.vgroup.flexfit.R;
 
 public class AboutusActivity extends AppCompatActivity {
@@ -24,7 +16,19 @@ public class AboutusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
 
+        // author- Vaishnavi
 
+        getSupportActionBar().hide();
+       // toolbar_title=findViewById(R.id.toolbar_title);
+        Toolbar toolbar = findViewById(R.id.toolbarFlexfit);
+       // toolbar_title.setText("");
+        toolbar.setNavigationIcon(R.drawable.back_arrow_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
     }
 

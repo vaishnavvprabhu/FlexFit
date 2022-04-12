@@ -7,12 +7,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.vgroup.flexfit.R;
 
 public class activity_exercise_timer extends AppCompatActivity {
     TextView timer;
     Button ExitBtn;
+    TextView toolbar_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class activity_exercise_timer extends AppCompatActivity {
         setContentView(R.layout.activity_exercise_timer);
         timer = findViewById(R.id.timer);
         //Hide Action bar
-        //getSupportActionBar().hide();
+        getSupportActionBar().hide();
         ExitBtn = findViewById(R.id.exitBtn);
         ExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +35,10 @@ public class activity_exercise_timer extends AppCompatActivity {
         });
         double time =1.50;//firebase
         reverseTimer(time,timer);
+        toolbar_title=findViewById(R.id.toolbar_title);
+        Toolbar toolbar = findViewById(R.id.toolbarFlexfit);
+        toolbar_title.setText("Exercise Timer");
+
     }
 
     public void reverseTimer(double Minutes, final TextView timer) {
