@@ -5,23 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.EditProfileActivity">
+    <LinearLayout
+        android:id="@+id/linLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <include layout="@layout/toolbar_flexfit"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/nunitosans_bold"
         android:text="Edit Profile"
         android:textColor="@color/black"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintTop_toBottomOf="@id/linLayout4" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField1"
@@ -65,13 +69,14 @@
         android:layout_width="310dp"
         android:layout_height="76dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="7dp"
         android:hint="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134">
+        app:layout_constraintTop_toBottomOf="@id/heading"
+        app:layout_constraintVertical_bias="0.032">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_name"
