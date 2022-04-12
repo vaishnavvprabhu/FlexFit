@@ -22,20 +22,26 @@
                 android:id="@+id/linLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                >
-                <include layout="@layout/toolbar_flexfit"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/toolbar_flexfit" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/food_img"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginTop="-16dp"
+            <LinearLayout
+                android:id="@+id/linLayout_img"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linLayout2"
-                app:srcCompat="@drawable/hiit" />
+                app:layout_constraintTop_toBottomOf="@id/linLayout2"           android:layout_width="match_parent"
+                android:layout_height="230dp"
+                >
+                <ImageView
+                    android:id="@+id/exercise_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toBottomOf="@id/linLayout3"
+                    app:srcCompat="@drawable/hiit" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/watchVid"
@@ -52,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/food_img"
+                app:layout_constraintTop_toBottomOf="@+id/linLayout_img"
                 app:layout_constraintVertical_bias="0.434" />
 
             <TextView
@@ -91,7 +97,7 @@
             <TextView
                 android:id="@+id/s1desc"
                 android:layout_width="305dp"
-                android:layout_height="101dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:fontFamily="@font/nunitosans_regular"
                 android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
@@ -124,7 +130,7 @@
             <TextView
                 android:id="@+id/s2desc"
                 android:layout_width="285dp"
-                android:layout_height="101dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:fontFamily="@font/nunitosans_regular"
                 android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
@@ -158,7 +164,7 @@
             <TextView
                 android:id="@+id/s3desc"
                 android:layout_width="285dp"
-                android:layout_height="101dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:fontFamily="@font/nunitosans_regular"
                 android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
