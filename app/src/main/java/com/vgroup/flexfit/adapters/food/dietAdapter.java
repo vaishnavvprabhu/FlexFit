@@ -72,9 +72,7 @@ public class dietAdapter extends FirebaseRecyclerAdapter<diet, dietAdapter.dietV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), activity_recipes.class);
-
-
-
+                intent.putExtra("name", model.getName());
                 System.out.println(holder.getBindingAdapterPosition());
                 v.getContext().startActivity(intent);
             }

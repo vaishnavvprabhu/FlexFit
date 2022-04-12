@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.R;
+import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
 import com.vgroup.flexfit.adapters.food.dietAdapter;
 import com.vgroup.flexfit.data.diet;
 
@@ -97,9 +98,9 @@ public class DietActivity extends AppCompatActivity {
 
 
         //Display recylcer in a linear form
-        b_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        l_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        d_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        b_recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        l_recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        d_recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<diet> options = new FirebaseRecyclerOptions.Builder<diet>().setQuery(mbaseb, diet.class).build();

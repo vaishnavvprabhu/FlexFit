@@ -111,20 +111,27 @@ public class activity_exercise_genres extends AppCompatActivity {
 
                 if(Hcard.isChecked()){
                     msg="hi";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, HomeActivity.class);
+                    startActivity(intent);
                 }
                 else if(Scard.isChecked()){
                     msg="st";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, HomeActivity.class);
+                    startActivity(intent);
                 }
                 else if(Fcard.isChecked()){
                     msg="fl";
+                    addDetailsToNewUser();
+                    Intent intent = new Intent(activity_exercise_genres.this, HomeActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "You have not selected any option. Kindly click on any type of exercise that you prefer.", Toast.LENGTH_SHORT).show();
                 }
 
-                addDetailsToNewUser();
-                Intent intent = new Intent(activity_exercise_genres.this, activity_login.class);
-                startActivity(intent);
+
             }
         });
     }
@@ -147,8 +154,8 @@ public class activity_exercise_genres extends AppCompatActivity {
                 userinfoDb = FirebaseDatabase.getInstance().getReference().child("user");
                 insertUserData();
             }
-            //make toast and navigate to login
-            Toast.makeText(getApplicationContext(), "Registration Successful! Now Login using your details.", Toast.LENGTH_LONG).show();
+            //make toast and navigate to home
+            Toast.makeText(getApplicationContext(), "Registration Successful! Now you can start using the app!", Toast.LENGTH_LONG).show();
 
         }
         catch (Exception e) {
@@ -180,5 +187,6 @@ public class activity_exercise_genres extends AppCompatActivity {
         System.out.println(user);
         userinfoDb.child(user.getUseridentity()).setValue(user);
     }
+
 }
 //}

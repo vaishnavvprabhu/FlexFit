@@ -11,13 +11,19 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.crashlytics.buildtools.reloc.javax.annotation.Nonnull;
 import com.google.firebase.database.DatabaseReference;
@@ -95,18 +101,45 @@ public class activity_register extends AppCompatActivity {
                                 Intent getmoredetails = new Intent(activity_register.this,activity_setup.class);
                                 getmoredetails.putExtra("username",name);
                                 System.out.println(name);
+                                Toast.makeText(getApplicationContext(),"Welcome On Board "+name+"! Please fill these details.",Toast.LENGTH_LONG).show();
                                 startActivity(getmoredetails);
                             }
                             else{
+                                try {
+                                    throw task.getException();
+                                }
+                                catch(FirebaseAuthWeakPasswordException e) {
+                                    notifyUser("Please Choose a stronger password");
+                                }
+                                catch(FirebaseAuthInvalidCredentialsException e) {
+                                    notifyUser("Invalid Email ID");
+                                }
+                                catch(FirebaseAuthUserCollisionException e) {
+                                    notifyUser("You already have an account with us");
+                                }
+                                catch(Exception e) {
+                                    Log.e(TAG, e.getMessage());
+                                    notifyUser("An Unknown Error Occurred. Please Try Again Later");
+                                }
                                 //Reg fail toast make
 
                                 System.out.println("Error= "+task.getException().getMessage());
-                                Toast.makeText(getApplicationContext(),"Registration Failure"+task.getException().toString(), Toast.LENGTH_LONG).show();
+                                /*Toast.makeText(getApplicationContext(),"Registration Failure: "+task.getException().toString(), Toast.LENGTH_LONG).show();*/
                             }
 
 
                     }
-                });
+                })                .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+
+
+        });
+    }
+
+    private void notifyUser(String error) {
+        Toast.makeText(getApplicationContext(),"Login Failed: "+ error, Toast.LENGTH_LONG).show();
     }
     private void insertUserData(){
         String name = username;
@@ -123,6 +156,6 @@ public class activity_register extends AppCompatActivity {
 
         userinfoDb.push().setValue(user);
 
-        Toast.makeText(getApplicationContext(),"Welcome On Board "+name+"! Please fill these details.",Toast.LENGTH_LONG).show();
+
     }
 }

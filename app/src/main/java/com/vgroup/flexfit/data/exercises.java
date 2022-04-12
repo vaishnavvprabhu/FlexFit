@@ -9,11 +9,15 @@ public class exercises {
     private String difficulty;
     private String image;
 
-    public exercises(){
-//            public exercises(String name, String time_taken, String image){
-//            this.name = name;
-//            this.time_taken = time_taken;
-//            this.image= image;
+    public exercises(/*String name, Long time_taken, String desc, String equipment, Long calories, String difficulty, String image*/) {
+//
+      /*      this.name = name;
+            this.time_taken = time_taken;
+            this.desc = desc;
+            this.equipment = equipment;
+            this.difficulty = difficulty;
+            this.image= image;
+            this.calories = calories;*/
     }
 
     public String getName() {
