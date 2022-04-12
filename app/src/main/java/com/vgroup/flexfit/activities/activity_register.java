@@ -123,7 +123,7 @@ public class activity_register extends AppCompatActivity {
                                 }
                                 //Reg fail toast make
 
-                                System.out.println("Error= "+task.getException().getMessage());
+                                //System.out.println("Error= "+task.getException().getMessage());
                                 /*Toast.makeText(getApplicationContext(),"Registration Failure: "+task.getException().toString(), Toast.LENGTH_LONG).show();*/
                             }
 

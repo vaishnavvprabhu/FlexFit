@@ -127,7 +127,7 @@ ImageView ex_img;
         intent.putExtra("name",exercisename);
         intent.putExtra("expref",expref);
         intent.putExtra("position",position);
-        notifyUser("intent put extra: "+time);
+        //notifyUser("intent put extra: "+time);
         startActivity(intent);
     }
 
@@ -174,12 +174,7 @@ ImageView ex_img;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
-                if(!snapshot.exists()){
-                    Toast.makeText(getApplicationContext(),"We would need some additional details about you",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(ExerciseDescActivity.this, activity_setup.class);
-                    startActivity(intent);
-                }
-                else{
+
                     Log.d(TAG, "" +  map);
                     exercises dinosaur = snapshot.getValue(exercises.class);
                     int positionNumber = position + 1;
@@ -216,7 +211,6 @@ ImageView ex_img;
                     System.out.println(name);
                     //notifyUser(name);
 
-                }
 
                 /*user.setText(greeting + name);*/
             }

@@ -30,16 +30,16 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:hint="Email ID"
+        android:hint="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outlineTextField3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_email"
+            android:id="@+id/edit_name"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -48,9 +48,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="Age"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,11 +66,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="7dp"
-        android:hint="Name"
+        android:hint="User Identity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -79,7 +79,8 @@
         app:layout_constraintVertical_bias="0.032">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_name"
+            android:id="@+id/edit_email"
+            android:editable="false"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -88,9 +89,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField4"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="Height"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,9 +107,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlineTextField5"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="Weight"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,9 +125,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/menu"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="310dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="Preffered Workout"
         app:layout_constraintStart_toStartOf="parent"

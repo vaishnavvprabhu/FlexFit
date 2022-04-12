@@ -83,7 +83,6 @@ public class WorkoutActivity extends AppCompatActivity {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
         //nav bar
-
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar_home);
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_toolbar));
@@ -131,12 +130,8 @@ public class WorkoutActivity extends AppCompatActivity {
         daynum.setText(dayToDisplay);
         mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/"+name+"/"+dayToRetrieve);
 
-
-
-
         recyclerview = (RecyclerView) findViewById(R.id.recycler_workout_view);
-
-        //Display recylcer in a linear form
+        //Display recycler in a linear form
         recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(WorkoutActivity.this, LinearLayoutManager.VERTICAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
@@ -158,7 +153,6 @@ public class WorkoutActivity extends AppCompatActivity {
 
     //Code to get data from database on activity start
     @Override protected void onStart() {
-
         super.onStart();
         adapter.startListening();
     }

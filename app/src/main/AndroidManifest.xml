@@ -24,6 +24,9 @@
         <activity
             android:name=".activities.activity_exercise_timer"
             android:exported="true" />
+        <activity
+            android:name=".activities.activity_exercise_timer_home"
+            android:exported="true" />
 
         <activity
             android:name=".activities.HomeActivity"
@@ -60,6 +63,9 @@
             android:exported="true" />
         <activity
             android:name=".activities.ExerciseDescActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.HomeExerciseDescActivity"
             android:exported="true" />
         <activity
             android:name=".activities.activity_intro"

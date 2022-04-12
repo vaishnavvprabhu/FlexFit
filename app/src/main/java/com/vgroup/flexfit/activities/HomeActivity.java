@@ -2,6 +2,8 @@ package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
 
+
+
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -30,7 +32,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
-import com.vgroup.flexfit.adapters.exerciseAdapter;
+import com.vgroup.flexfit.adapters.homeExerciseAdapter;
 import com.vgroup.flexfit.data.exercises;
 
 import java.util.Calendar;
@@ -47,12 +49,12 @@ public class HomeActivity extends AppCompatActivity {
     public String userid, greeting;
 
     //Object of adapter Class
-    exerciseAdapter adapter;
+    homeExerciseAdapter adapter;
 
     //Object of Firebase Realtime db
     DatabaseReference mbase,muser,mname;
     private Menu mMenu;
-
+    public String pref_workout;
     private long backPressed;
     private static final int TIME_INTERVAL = 2000;
 
@@ -91,14 +93,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
         //nav bar
-
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
         try {
-
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -142,33 +140,52 @@ public class HomeActivity extends AppCompatActivity {
         user = findViewById(R.id.actionbar_title_text);
         System.out.println(query);
 
+        //Create a instance of db & get instance
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String userid = currentFirebaseUser.getUid();
+        userReference = FirebaseDatabase.getInstance().getReference("user/" + userid);
+
+        userReference.addValueEventListener(new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Map<String, String> map = (Map<String, String>) snapshot.getValue();
+
+                Log.d(TAG, "" +  map);
+                /*pref_workout = snapshot.child("pref_workout").getValue(String.class);*/
+                /*System.out.println("pref Workout: "+pref_workout);*/
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(HomeActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
+            }
+
+        });
 
         //Create a instance of db & get instance
-        mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/wg/day1");
-
+        mbase = FirebaseDatabase.getInstance().getReference().child("global/exercises/warmup");
         //User Database Reference and instance
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userid = currentFirebaseUser.getUid();
         userReference = FirebaseDatabase.getInstance().getReference("user/"+userid);
-
+        /*user.setText(greeting + name);*/
+        //User Database Reference and instance
         recyclerview = findViewById(R.id.recycler1);
 
-        //Display recylcer in a linear form
+        //Display recycler in a linear form
         recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
 
         //Connect object (of the req adapter) to adapter class itself
-        adapter = new exerciseAdapter(options);        //recycler connect to adapter class
-        getUserData();
+        adapter = new homeExerciseAdapter(options);        //recycler connect to adapter class
+       // getUserData();
         recyclerview.setAdapter(adapter);
 
     }
 
     //Code to get data from database on activity start
     @Override protected void onStart() {
-
         super.onStart();
         adapter.startListening();
     }
@@ -186,8 +203,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-   private void getUserData(){
-
+ /*  private void getUserData(){
         mname = FirebaseDatabase.getInstance().getReference("user/"+userid);
 
         //Retrieving data referred from geeks for geeks
@@ -196,6 +212,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Map<String, Object> map = (Map<String, Object>) snapshot.getValue();
+
                 if(!snapshot.exists()){
                     Toast.makeText(getApplicationContext(),"We would need some additional details about you",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(HomeActivity.this, activity_setup.class);
@@ -204,6 +221,7 @@ public class HomeActivity extends AppCompatActivity {
                 else{
                     Log.d(TAG, "" +  map);
                     String name = snapshot.child("name").getValue(String.class);
+                    pref_workout = snapshot.child("pref_workout").getValue(String.class);
                     System.out.println(name);
                     setGreeting();
                     if(greeting == null){
@@ -211,7 +229,8 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }
 
-                /*user.setText(greeting + name);*/
+                *//*user.setText(greeting + name);*//*
+
             }
 
             @Override
@@ -220,7 +239,8 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
-    }
+       //return pref_workout;
+    }*/
 
     //Not Working as of now
     //TODO:Work on Set Greeting on the home page. It shows null greeting as of now.
