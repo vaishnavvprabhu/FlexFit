@@ -97,7 +97,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if(msg==null) {
                     Toast.makeText(getApplicationContext(), "You have not selected any option. Kindly click on any type of exercise that you prefer.", Toast.LENGTH_SHORT).show();
                 }
-                else if (Double.parseDouble(edit_age.getText().toString()) > 100 || Double.parseDouble(edit_height.getText().toString()) > 500){
+                else if (Double.parseDouble(edit_age.getText().toString()) > 100 || Double.parseDouble(edit_height.getText().toString()) > 5){
                     Toast.makeText(getApplicationContext(), "Please Enter correct credentials", Toast.LENGTH_SHORT).show();
                 }
                 else
