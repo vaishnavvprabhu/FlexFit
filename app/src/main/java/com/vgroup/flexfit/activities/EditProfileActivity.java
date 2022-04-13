@@ -29,6 +29,7 @@ import com.vgroup.flexfit.data.User;
 
 import java.util.Map;
 
+
 public class EditProfileActivity extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     private DatabaseReference userinfoDb;
@@ -55,7 +56,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        String workout_genres[] = {"High Intensity", "Weight Gain", "Flexibility"};
+        String workout_genres[] = {"High Intensity", "Strength Training", "Flexibility"};
         // create an array adapter and pass the required parameter
         // in our case pass the context, drop down layout , and array.
         arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_items, R.id.textViewitems, workout_genres);
@@ -79,7 +80,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if(selectedItem.contains("Flexibility")){
                     msg="fl";
                 }
-                else if(selectedItem.contains("Weight Gain")){
+                else if(selectedItem.contains("Strength Training")){
                     msg="wg";
                     /*addDetailsToNewUser();*/
                 }
@@ -96,10 +97,21 @@ public class EditProfileActivity extends AppCompatActivity {
                 if(msg==null) {
                     Toast.makeText(getApplicationContext(), "You have not selected any option. Kindly click on any type of exercise that you prefer.", Toast.LENGTH_SHORT).show();
                 }
+                else if (Double.parseDouble(edit_age.getText().toString()) > 100 || Double.parseDouble(edit_height.getText().toString()) > 5){
+                    Toast.makeText(getApplicationContext(), "Please Enter correct credentials", Toast.LENGTH_SHORT).show();
+                }
                 else
                 {
                     addDetailsToNewUser();
                 }
+
+            }
+        });
+
+        edit_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "You can not change User Id", Toast.LENGTH_SHORT).show();
             }
         });
     }

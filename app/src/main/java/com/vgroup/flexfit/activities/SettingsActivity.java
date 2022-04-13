@@ -27,6 +27,7 @@ import com.vgroup.flexfit.R;
 
 import java.util.Map;
 
+
 public class SettingsActivity extends AppCompatActivity {
     View line,line2;
     TextView fab,useremail,userWorkout,user_greeting;
@@ -131,7 +132,7 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     else if (pref_workout.contains("wg"))
                     {
-                        workout_genres = "Weight Gain";
+                        workout_genres = "Strength Training";
                         userWorkout.setText(workout_genres);
                     }
                     else if (pref_workout.contains("hi"))

@@ -60,7 +60,8 @@
             android:id="@+id/edit_age"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -84,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             tools:ignore="SpeakableTextPresentCheck" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -101,7 +103,8 @@
             android:id="@+id/edit_height"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -119,7 +122,8 @@
             android:id="@+id/edit_weight"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

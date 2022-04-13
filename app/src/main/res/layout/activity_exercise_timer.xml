@@ -10,8 +10,7 @@
         android:id="@+id/linLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
         <include layout="@layout/toolbar_flexfit"
             />
     </LinearLayout>
@@ -30,6 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/linLayout3"
         app:srcCompat="@drawable/hiit" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/exc_title"
         android:layout_width="wrap_content"
