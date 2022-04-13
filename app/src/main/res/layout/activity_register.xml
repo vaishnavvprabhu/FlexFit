@@ -89,6 +89,7 @@
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
         android:text="@string/register"
+        android:gravity="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="17sp"

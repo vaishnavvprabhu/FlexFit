@@ -22,7 +22,7 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/nunitosans_regular"
-        android:text=" A mobile fitness app that can be downloaded on any Android device and used to get fit anywhere at any time.\n\n\nOur fitness app is available on Apple devices, and lets our members have the best in building health for a better future. "
+        android:text=" A mobile fitness app that can be downloaded on any Android device and used to get fit anywhere at any time.\n\n\nOur fitness app is available on Android devices, and lets our members have the best in building health for a better future. "
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
