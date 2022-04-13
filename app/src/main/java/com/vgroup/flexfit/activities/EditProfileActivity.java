@@ -29,6 +29,7 @@ import com.vgroup.flexfit.data.User;
 
 import java.util.Map;
 
+
 public class EditProfileActivity extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     private DatabaseReference userinfoDb;

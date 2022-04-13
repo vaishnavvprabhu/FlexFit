@@ -27,6 +27,7 @@ import com.vgroup.flexfit.R;
 
 import java.util.Map;
 
+
 public class SettingsActivity extends AppCompatActivity {
     View line,line2;
     TextView fab,useremail,userWorkout,user_greeting;
