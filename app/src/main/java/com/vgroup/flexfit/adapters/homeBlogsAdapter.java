@@ -2,6 +2,7 @@ package com.vgroup.flexfit.adapters;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.activities.activity_recipes;
+import com.vgroup.flexfit.activities.activity_webview;
 import com.vgroup.flexfit.data.blogs;
 
 public class homeBlogsAdapter extends FirebaseRecyclerAdapter<blogs, homeBlogsAdapter.blogsViewholder> {
@@ -44,11 +46,13 @@ public class homeBlogsAdapter extends FirebaseRecyclerAdapter<blogs, homeBlogsAd
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), activity_recipes.class);
-                intent.putExtra("name", model.getName());
-                intent.putExtra("position",holder.getBindingAdapterPosition());
+                /*Intent intent = new Intent(v.getContext(), activity_recipes.class);*/
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(model.getLink()));
+                /*startActivity(browserIntent);*/
+                /*                intent.putExtra("name", model.getName());
+                intent.putExtra("position",holder.getBindingAdapterPosition());*/
                 System.out.println(holder.getBindingAdapterPosition());
-                v.getContext().startActivity(intent);
+                v.getContext().startActivity(browserIntent);
             }
         });
 

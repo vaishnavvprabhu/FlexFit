@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlexFit"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.activity_webview"
+            android:exported="false"
+            android:label="@string/title_activity_webview"
+            android:theme="@style/Theme.FlexFit.NoActionBar" />
         <activity
             android:name=".activities.EditProfileActivity"
             android:exported="false" />
@@ -30,7 +35,6 @@
         <activity
             android:name=".activities.activity_exercise_timer_home"
             android:exported="true" />
-
         <activity
             android:name=".activities.HomeActivity"
             android:exported="true" />
@@ -80,10 +84,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".GoogleFitService"
-            android:enabled="true" >
-        </service>
+            android:enabled="true"></service>
     </application>
 
 </manifest>
