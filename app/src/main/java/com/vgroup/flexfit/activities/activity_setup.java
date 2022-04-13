@@ -71,19 +71,18 @@ public class activity_setup extends AppCompatActivity {
             Log.v(TAG, "Please check the data entered!");
             return;
         }
-/*
-        else if (heightTextView == null || weightTextView == null) {
-            Toast.makeText(getApplicationContext(),"Please Enter Height", Toast.LENGTH_LONG).show();
-            Log.v(TAG, "Please Enter Height");
+
+        if (Integer.parseInt(nage) > 100 ||Integer.parseInt(nheight) > 500) {
+            Toast.makeText(getApplicationContext(),"Please Enter Valid Credentials", Toast.LENGTH_LONG).show();
+            Log.v(TAG, "Please Enter Valid Credentials");
             return;
         }
-
-        else if (weightTextView == null) {
+/*      else if (weightTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Weight", Toast.LENGTH_LONG).show();
             Log.v(TAG, "Please Enter Weight");
             return;
         }
-        else if (TextUtils.isEmpty(nage)) {
+       else if (TextUtils.isEmpty(nage)) {
             Toast.makeText(getApplicationContext(),"Please Enter Correct Age", Toast.LENGTH_LONG) .show();
             Log.v(TAG, "Please Enter Email");
             return;
