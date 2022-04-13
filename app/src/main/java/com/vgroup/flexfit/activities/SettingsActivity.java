@@ -131,7 +131,7 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     else if (pref_workout.contains("wg"))
                     {
-                        workout_genres = "Weight Gain";
+                        workout_genres = "Strength Training";
                         userWorkout.setText(workout_genres);
                     }
                     else if (pref_workout.contains("hi"))

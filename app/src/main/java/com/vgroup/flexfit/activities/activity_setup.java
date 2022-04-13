@@ -77,6 +77,7 @@ public class activity_setup extends AppCompatActivity {
             Log.v(TAG, "Please Enter Valid Credentials");
             return;
         }
+
 /*      else if (weightTextView == null) {
             Toast.makeText(getApplicationContext(),"Please Enter Weight", Toast.LENGTH_LONG).show();
             Log.v(TAG, "Please Enter Weight");
