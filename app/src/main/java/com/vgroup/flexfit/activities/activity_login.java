@@ -83,7 +83,6 @@ public class activity_login extends AppCompatActivity {
 
         //create/register new user
         Log.v(TAG, "Starting with mAuth");
-        displayProgressDialog();
         mAuth
                 .signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
@@ -132,12 +131,5 @@ public class activity_login extends AppCompatActivity {
                 });
 
 
-    }
-    public void displayProgressDialog() {
-        progressDialog = new ProgressDialog(getBaseContext());
-        progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("Sit tight we are working on it!");
-        progressDialog.show();
     }
 }

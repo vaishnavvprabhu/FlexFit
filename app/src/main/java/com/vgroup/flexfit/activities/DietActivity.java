@@ -18,7 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
+import com.vgroup.flexfit.adapters.food.breakfastAdapter;
 import com.vgroup.flexfit.adapters.food.dietAdapter;
+import com.vgroup.flexfit.adapters.food.dinnerAdapter;
+import com.vgroup.flexfit.adapters.food.lunchAdapter;
 import com.vgroup.flexfit.data.diet;
 
 import java.util.Objects;
@@ -31,7 +34,9 @@ public class DietActivity extends AppCompatActivity {
     private TextView title,daynum;
     //Author : VVP
     //Object of adapter Class
-    dietAdapter b_adapter, l_adapter, d_adapter;
+    breakfastAdapter b_adapter;
+    lunchAdapter l_adapter;
+    dinnerAdapter d_adapter;
 
     //Object of Firebase Realtime db
     DatabaseReference mbaseb, mbasel, mbased;
@@ -108,9 +113,9 @@ public class DietActivity extends AppCompatActivity {
         FirebaseRecyclerOptions<diet> d_options = new FirebaseRecyclerOptions.Builder<diet>().setQuery(mbased, diet.class).build();
 
         //Connect object (of the req adapter) to adapter class itself
-        b_adapter = new dietAdapter(options);
-        l_adapter = new dietAdapter(l_options);
-        d_adapter = new dietAdapter(d_options);
+        b_adapter = new breakfastAdapter(options);
+        l_adapter = new lunchAdapter(l_options);
+        d_adapter = new dinnerAdapter(d_options);
         //recycler connect to adapter class
         b_recyclerview.setAdapter(b_adapter);
         l_recyclerview.setAdapter(l_adapter);

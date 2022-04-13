@@ -1,7 +1,6 @@
 package com.vgroup.flexfit.activities;
 
 import static android.content.ContentValues.TAG;
-
 import static com.vgroup.flexfit.activities.WorkoutActivity.name;
 
 import android.content.Intent;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
@@ -34,7 +32,7 @@ import java.util.Calendar;
 import java.util.Map;
 
 
-public class ExerciseDescActivity extends AppCompatActivity{
+public class HomeExerciseDescActivity extends AppCompatActivity{
 //author vibha,vvp
     Button btn;
 TextView toolbar_title2, time_taken_tv, diff_tv, equip_tv, cal_tv, textView, textView16;
@@ -66,9 +64,6 @@ ImageView ex_img;
         diff_tv = (TextView) findViewById(R.id.diff_tv);
         equip_tv = (TextView) findViewById(R.id.equip_tv);
         cal_tv = (TextView) findViewById(R.id.cal_tv);
-        //Get Day of the week, Use it for Query & display on text field
-        int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-        dayToRetrieve = "day"+dayOfWeek;
 
         String exercisename;
         if (savedInstanceState == null) {
@@ -122,7 +117,7 @@ ImageView ex_img;
     }
 
     private void navigateToTimedExercise(String time, String exercisename, String expref, int position) {
-        Intent intent = new Intent(ExerciseDescActivity.this, activity_exercise_timer.class);
+        Intent intent = new Intent(HomeExerciseDescActivity.this, activity_exercise_timer_home.class);
         intent.putExtra("time",time);
         intent.putExtra("name",exercisename);
         intent.putExtra("expref",expref);
@@ -156,7 +151,7 @@ ImageView ex_img;
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ExerciseDescActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeExerciseDescActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -165,7 +160,7 @@ ImageView ex_img;
 
     private void getExerciseData(String exercisename, String expref, int position) {
 
-        exerciseDatabaseReference = FirebaseDatabase.getInstance().getReference("global/exercises/"+expref+"/"+dayToRetrieve);
+        exerciseDatabaseReference = FirebaseDatabase.getInstance().getReference("global/exercises/warmup");
 
 
         //Retrieving data referred from geeks for geeks
@@ -217,14 +212,14 @@ ImageView ex_img;
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ExerciseDescActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeExerciseDescActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
             }
 
         });
     }
 
     public void notifyUser(String str){
-        Toast.makeText(ExerciseDescActivity.this,""+str,Toast.LENGTH_LONG).show();
+        Toast.makeText(HomeExerciseDescActivity.this,""+str,Toast.LENGTH_LONG).show();
     }
 
 
