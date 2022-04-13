@@ -1,7 +1,5 @@
 package com.vgroup.flexfit.activities;
 
-import static android.content.ContentValues.TAG;
-
 
 import android.Manifest;
 import android.app.Activity;
@@ -50,19 +48,29 @@ import com.google.firebase.database.ValueEventListener;
 import com.vgroup.flexfit.GoogleFitService;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.adapters.WrapContentLinearLayoutManager;
-import com.vgroup.flexfit.adapters.homeBlogsAdapter;
 import com.vgroup.flexfit.adapters.homeExerciseAdapter;
-import com.vgroup.flexfit.data.blogs;
-import com.vgroup.flexfit.data.diet;
 import com.vgroup.flexfit.data.exercises;
 
 import java.util.Calendar;
 import java.util.Map;
 import java.util.Objects;
 
-public class HomeActivity extends AppCompatActivity {
+public class GfitHomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private RecyclerView recyclerview, blogRecyclerview;
+    private RecyclerView recyclerview;
+
+
+    //GoogleFit
+    private String[] PERMISSIONS;
+    private static final int SIGN_IN_REQUEST_CODE = 1001;
+    public final static String TAG = "GoogleFitService";
+    private ConnectionResult mFitResultResolution;
+    private static final String AUTH_PENDING = "auth_state_pending";
+    private boolean authInProgress = false;
+    private static final int REQUEST_OAUTH = 1431;
+    private Button mConnectButton;
+    private Button mGetStepsButton;
+    TextView number_of_steps;
 
 
 
@@ -73,10 +81,9 @@ public class HomeActivity extends AppCompatActivity {
 
     //Object of adapter Class
     homeExerciseAdapter adapter;
-    homeBlogsAdapter blogAdapter;
 
     //Object of Firebase Realtime db
-    DatabaseReference mbase,mblogs,mname;
+    DatabaseReference mbase,muser,mname;
     private Menu mMenu;
     public String pref_workout;
     private long backPressed;
@@ -117,6 +124,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         //nav bar
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
@@ -147,12 +155,10 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
         //nav bar
+
         //Object for username
         Query query = databasetReference.child("user").equalTo(userid);
 
-        mblogs = FirebaseDatabase.getInstance().getReference().child("global/blogs");
-
-        blogRecyclerview = (RecyclerView) findViewById(R.id.recycler2);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 
@@ -183,7 +189,7 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(HomeActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(GfitHomeActivity.this,"Data Error", Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -199,19 +205,14 @@ public class HomeActivity extends AppCompatActivity {
 
         //Display recycler in a linear form
         recyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        blogRecyclerview.setLayoutManager(new WrapContentLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         //Using a Firebase UI provided class to query and fetch data
         FirebaseRecyclerOptions<exercises> options = new FirebaseRecyclerOptions.Builder<exercises>().setQuery(mbase, exercises.class).build();
-        FirebaseRecyclerOptions<blogs> l_options = new FirebaseRecyclerOptions.Builder<blogs>().setQuery(mblogs, blogs.class).build();
 
         //Connect object (of the req adapter) to adapter class itself
-        adapter = new homeExerciseAdapter(options);
-        blogAdapter = new homeBlogsAdapter(l_options);
-        //recycler connect to adapter class
+        adapter = new homeExerciseAdapter(options);        //recycler connect to adapter class
        // getUserData();
         recyclerview.setAdapter(adapter);
-        blogRecyclerview.setAdapter(blogAdapter);
 
     }
 
@@ -219,7 +220,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override protected void onStart() {
         super.onStart();
         adapter.startListening();
-        blogAdapter.startListening();
     }
 
 /*    @Override protected void onResume() {
@@ -232,7 +232,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override protected void onStop(){
         super.onStop();
         adapter.stopListening();
-        blogAdapter.stopListening();
     }
 
 
@@ -309,5 +308,195 @@ public class HomeActivity extends AppCompatActivity {
         }
         backPressed = System.currentTimeMillis();
     }
+
+
+
+    //GoogleFit Code Starts
+    private void handleConnectButton() {
+        //  try {
+        authInProgress = true;
+
+//                GoogleSignIn.requestPermissions(this, // your activity
+//                        SIGN_IN_REQUEST_CODE,
+//                        null, // passing null specifically to ask for account selection
+//                        fitnessOptions);
+
+        try {
+            mFitResultResolution.startResolutionForResult(this, REQUEST_OAUTH);
+        } catch (IntentSender.SendIntentException e) {
+            e.printStackTrace();
+        }
+        //  } catch (IntentSender.SendIntentException e) {
+//            Log.e(TAG,
+//                    "Activity Thread Google Fit Exception while starting resolution activity", e);
+//            Toast.makeText(this, "Fit connection unsuccessful",Toast.LENGTH_SHORT).show();
+//
+//        }
+    }
+
+    private void handleGetStepsButton() {
+        //Start Service and wait for broadcast
+
+        Intent service = new Intent(this, GoogleFitService.class);
+        service.putExtra(GoogleFitService.SERVICE_REQUEST_TYPE, GoogleFitService.TYPE_GET_STEP_TODAY_DATA);
+        service.putExtra(GoogleFitService.SERVICE_REQUEST_TYPE,GoogleFitService.TYPE_CALORIES_EXPENDED);
+        service.putExtra(GoogleFitService.SERVICE_REQUEST_TYPE,GoogleFitService.TYPE_DISTANCE_DELTA);
+        startService(service);
+    }
+    private void checkPermissions() {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED  ) {
+            // Check Permissions Now
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_OAUTH);
+
+        } else {
+            // permission has been granted, continue as usual
+
+            Task<Location> locationResult = LocationServices
+                    .getFusedLocationProviderClient(this )
+                    .getLastLocation();
+        }
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            // Check Permissions Now
+//            ActivityCompat.requestPermissions(this,
+//                    new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, REQUEST_OAUTH);
+//        } else {
+//            Task<Location> locationResult = LocationServices
+//                    .getFusedLocationProviderClient(this)
+//                    .getLastLocation();
+//        }
+    }
+
+
+    private void requestFitConnection() {
+        Intent service = new Intent(this, GoogleFitService.class);
+        service.putExtra(GoogleFitService.SERVICE_REQUEST_TYPE, GoogleFitService.TYPE_REQUEST_CONNECTION);
+        startService(service);
+    }
+
+    private final BroadcastReceiver mFitStatusReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            if (intent.hasExtra(GoogleFitService.FIT_EXTRA_NOTIFY_FAILED_STATUS_CODE) &&
+                    intent.hasExtra(GoogleFitService.FIT_EXTRA_NOTIFY_FAILED_STATUS_CODE)) {
+                //Recreate the connection result
+                int statusCode = intent.getIntExtra(GoogleFitService.FIT_EXTRA_NOTIFY_FAILED_STATUS_CODE, 0);
+                PendingIntent pendingIntent = intent.getParcelableExtra(GoogleFitService.FIT_EXTRA_NOTIFY_FAILED_INTENT);
+                ConnectionResult result = new ConnectionResult(statusCode, pendingIntent);
+                Log.d(TAG, "Fit connection failed - opening connect screen.");
+                fitHandleFailedConnection(result);
+            }
+            if (intent.hasExtra(GoogleFitService.FIT_EXTRA_CONNECTION_MESSAGE)) {
+                Log.d(TAG, "Fit connection successful - closing connect screen if it's open.");
+                fitHandleConnection();
+            }
+        }
+    };
+
+    //This would typically go in your fragment.
+    private final BroadcastReceiver mFitDataReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            if (intent.hasExtra(GoogleFitService.HISTORY_EXTRA_STEPS_TODAY)) {
+
+                final int totalSteps = intent.getIntExtra(GoogleFitService.HISTORY_EXTRA_STEPS_TODAY, 0);
+
+                final int totalCal = intent.getIntExtra(GoogleFitService.HISTORY_CALORIES,0);
+
+                final int totalDist = intent.getIntExtra(GoogleFitService.HISTORY_DISTANCE, 0);
+                Toast.makeText(GfitHomeActivity.this, "Total Steps: " + totalSteps+" TOTAL CAL: "+totalCal+" total dist: "+totalDist, Toast.LENGTH_LONG).show();
+
+            }
+        }
+    };
+
+    private void fitHandleConnection() {
+
+        mConnectButton.setEnabled(false);
+        mGetStepsButton.setEnabled(true);
+        Toast.makeText(this, "Fit connecting", Toast.LENGTH_SHORT).show();
+    }
+
+    private void fitHandleFailedConnection(ConnectionResult result) {
+
+        Toast.makeText(this, "Fit CONNECTION FAIL", Toast.LENGTH_SHORT).show();
+        Log.i(TAG, "Activity Thread Google Fit Connection failed. Cause: " + result.toString());
+        if (!result.hasResolution()) {
+            // Show the localized error dialog
+            GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), GfitHomeActivity.this, 0).show();
+            return;
+        }
+
+        // The failure has a resolution. Resolve it.
+        // Called typically when the app is not yet authorized, and an authorization dialog is displayed to the user.
+        if (!authInProgress) {
+            if (result.getErrorCode() == FitnessStatusCodes.NEEDS_OAUTH_PERMISSIONS) {
+                try {
+                    Log.d(TAG, "Google Fit connection failed with OAuth failure.  Trying to ask for consent (again)");
+                    result.startResolutionForResult(GfitHomeActivity.this, REQUEST_OAUTH);
+                } catch (IntentSender.SendIntentException e) {
+                    Log.e(TAG, "Activity Thread Google Fit Exception while starting resolution activity", e);
+                }
+            } else {
+                Toast.makeText(this, "RECONNECTING", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "Activity Thread Google Fit Attempting to resolve failed connection");
+
+                mFitResultResolution = result;
+                mConnectButton.setEnabled(true);
+            }
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        fitSaveInstanceState(outState);
+    }
+
+    private void fitSaveInstanceState(Bundle outState) {
+        outState.putBoolean(AUTH_PENDING, authInProgress);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        fitActivityResult(requestCode, resultCode);
+    }
+
+    private void fitActivityResult(int requestCode, int resultCode) {
+        if (requestCode == REQUEST_OAUTH) {
+            authInProgress = false;
+            if (resultCode == Activity.RESULT_OK) {
+                //Ask the service to reconnect.
+                Log.d(TAG, "Fit auth completed.  Asking for reconnect.");
+                requestFitConnection();
+
+            } else {
+                try {
+                    authInProgress = true;
+                    mFitResultResolution.startResolutionForResult(GfitHomeActivity.this, REQUEST_OAUTH);
+
+                } catch (IntentSender.SendIntentException e) {
+                    Log.e(TAG,
+                            "Activity Thread Google Fit Exception while starting resolution activity", e);
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mFitStatusReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mFitDataReceiver);
+
+        super.onDestroy();
+    }
+
+
+    //Google Fit Code Ends
 
 }
