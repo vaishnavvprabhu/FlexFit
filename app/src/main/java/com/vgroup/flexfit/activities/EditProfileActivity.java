@@ -33,8 +33,6 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         String workout_genres[] = {"High Intensity", "Strength Building", "Flexibility"};
-        // create an array adapter and pass the required parameter
-        // in our case pass the context, drop down layout , and array.
         arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_items, R.id.textViewitems, workout_genres);
         // get reference to the autocomplete text view
         autocompleteTV = findViewById(R.id.autoCompleteTextView);
