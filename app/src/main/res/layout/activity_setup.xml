@@ -124,6 +124,7 @@
         android:background="@drawable/btn_blue"
         android:fontFamily="@font/nunitosans_black"
         android:text="Next"
+        android:gravity="center"
         android:textAllCaps="false"
         android:textSize="17sp"
         android:textColor="@color/white"

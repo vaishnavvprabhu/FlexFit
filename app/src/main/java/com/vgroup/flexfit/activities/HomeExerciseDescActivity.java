@@ -28,7 +28,6 @@ import com.squareup.picasso.Picasso;
 import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.data.exercises;
 
-import java.util.Calendar;
 import java.util.Map;
 
 
@@ -58,7 +57,7 @@ ImageView ex_img;
         toolbar_title2.setText("Exercise");
         toolbar.setNavigationIcon(R.drawable.back_arrow_white);
 
-        textView = (TextView) findViewById(R.id.textView);
+        textView = (TextView) findViewById(R.id.exc_name);
         textView16 = (TextView) findViewById(R.id.textView16);
         time_taken_tv = (TextView) findViewById(R.id.time_taken_tv);
         diff_tv = (TextView) findViewById(R.id.diff_tv);
