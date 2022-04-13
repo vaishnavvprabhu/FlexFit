@@ -20,7 +20,8 @@ public class diet {
         this.step3 = step3;*/
     }
 
-    public String getImage() {
+    public String getImage()
+    {
         return image;
     }
 

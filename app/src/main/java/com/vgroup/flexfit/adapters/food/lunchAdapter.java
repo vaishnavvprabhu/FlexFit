@@ -54,13 +54,10 @@ public class lunchAdapter extends FirebaseRecyclerAdapter<diet, lunchAdapter.die
                 holder.dttype.setText("NON VEG");
             }
         }
-        else
-        {
+        else {
             holder.dttypeclr.setVisibility(View.VISIBLE);
             holder.dttype.setVisibility(View.VISIBLE);
         }
-
-
 
         String eximgview = String.valueOf(model.getImage());
         //Picasso loads image into recycler from firebase link
