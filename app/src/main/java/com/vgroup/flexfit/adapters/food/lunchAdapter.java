@@ -1,4 +1,4 @@
-package com.vgroup.flexfit.adapters;
+package com.vgroup.flexfit.adapters.food;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,11 +18,11 @@ import com.vgroup.flexfit.R;
 import com.vgroup.flexfit.activities.activity_recipes;
 import com.vgroup.flexfit.data.diet;
 
-public class dietDetailAdapter extends FirebaseRecyclerAdapter<diet, dietDetailAdapter.dietViewholder> {
+public class lunchAdapter extends FirebaseRecyclerAdapter<diet, lunchAdapter.dietViewholder> {
 
     //Author : VVP
 
-    public dietDetailAdapter(
+    public lunchAdapter(
             @NonNull FirebaseRecyclerOptions<diet> options)
     {
         super(options);
@@ -30,7 +30,7 @@ public class dietDetailAdapter extends FirebaseRecyclerAdapter<diet, dietDetailA
 
     //Function to bind the view in Card View (diet.xml) with data in the model class - diet.class
     @Override
-    protected void onBindViewHolder(@NonNull dietDetailAdapter.dietViewholder holder, int position, @NonNull diet model)
+    protected void onBindViewHolder(@NonNull lunchAdapter.dietViewholder holder, int position, @NonNull diet model)
     {
         //Data Entry
         holder.dtname.setText(model.getName());
@@ -39,14 +39,14 @@ public class dietDetailAdapter extends FirebaseRecyclerAdapter<diet, dietDetailA
         holder.dtcal.setText(ex_cal_long_to_string);
         holder.dtdiff.setText(model.getDifficulty());
 
-        String dttypeclr = model.getDiet();
+       String dttypeclr = model.getDiet();
         if (dttypeclr != null)
         {
             if (dttypeclr.startsWith("V"))
             {
                 //Set food type badge based on nonveg or veg
-                holder.dttypeclr.setBackgroundColor(Color.parseColor("#008000"));
-                holder.dttype.setText("     VEG     ");
+                 holder.dttypeclr.setBackgroundColor(Color.parseColor("#008000"));
+                 holder.dttype.setText("     VEG     ");
             }
             else if (dttypeclr.startsWith("N"))
             {
@@ -72,9 +72,9 @@ public class dietDetailAdapter extends FirebaseRecyclerAdapter<diet, dietDetailA
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), activity_recipes.class);
-
-
-
+                intent.putExtra("name", model.getName());
+                intent.putExtra("position",holder.getBindingAdapterPosition());
+                intent.putExtra("type","lunch");
                 System.out.println(holder.getBindingAdapterPosition());
                 v.getContext().startActivity(intent);
             }
@@ -84,9 +84,9 @@ public class dietDetailAdapter extends FirebaseRecyclerAdapter<diet, dietDetailA
 
     @NonNull
     @Override
-    public dietDetailAdapter.dietViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public lunchAdapter.dietViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.diet, parent, false);
-        return new dietDetailAdapter.dietViewholder(view);
+        return new lunchAdapter.dietViewholder(view);
     }
 
     //Sub Class for Reference
