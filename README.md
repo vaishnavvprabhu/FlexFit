@@ -18,10 +18,3 @@
 - [Vaishnavi Singh](https://github.com/singhvaishnavi25)
 				</div>
 
-<div>
-<h2 id="0151386d-1e1f-4f69-b2cd-0634a7e408ee" class="">Sync Project On Android Studio</h2>
-<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class=""><a href="https://youtu.be/swNHOI0J0pw">Part 1</a></p>
-
-<br>
-<p id="93ed1197-a051-4b76-b165-06a3959f90ff" class=""><a href="https://www.youtube.com/watch?v=6L5TrhNoVZA">Part 2</a></p>
-
