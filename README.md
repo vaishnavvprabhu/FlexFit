@@ -11,8 +11,8 @@
 				</div>
 
 <div id="3e1927f5-fb95-4783-aacd-02277abda632" style="width:75%" class="column">
-## Authors
 
+<h2 id="929eecc1-af7f-4737-88f9-1addde5786ad" class="">Authors</h2>
 
 - [Vaishnav Vivek Prabhu](https://github.com/vaishnavvprabhu)
 - [Vaishnavi Singh](https://github.com/singhvaishnavi25)
