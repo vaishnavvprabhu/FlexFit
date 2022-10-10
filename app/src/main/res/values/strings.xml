@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">FlexFit</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="label">Email</string>
+    <string name="register">Register</string>
+    <string name="next">Next</string>
+    <string name="continue_btn">Continue</string>
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="workout">Workout</string>
+    <string name="diet">Diet</string>
+    <string name="recommend">Recommended</string>
+    <string name="today_s_exercises">Today\'s Exercises</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment11">helo fragment 11 (home)</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="messageWithLink"><a href="https://www.google.com/">WATCH VIDEO</a></string>
+    <string name="warmup">Warmup Exercises</string>
+
+    <string-array name="workout_genres">
+        <item>High Intensity</item>
+        <item>Strength Building</item>
+        <item>Flexibility</item>
+    </string-array>
+    <string name="title_activity_webview">activity_webview</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

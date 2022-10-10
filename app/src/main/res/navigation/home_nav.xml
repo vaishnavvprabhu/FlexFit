@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vgroup.flexfit.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dietFragment"
+            app:destination="@id/dietFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.vgroup.flexfit.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" >
+        <action
+            android:id="@+id/action_dietFragment_to_workoutFragment2"
+            app:destination="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_dietFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.vgroup.flexfit.WorkoutFragment"
+        android:label="fragment_workout"
+        tools:layout="@layout/fragment_workout" >
+        <action
+            android:id="@+id/action_workoutFragment_to_dietFragment"
+            app:destination="@id/dietFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

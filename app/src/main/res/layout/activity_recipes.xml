@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchor="@+id/constraintLayout2"
+            app:layout_anchorGravity="center"
+            tools:context=".activities.activity_recipes">
+
+
+            <LinearLayout
+                android:id="@+id/linLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/toolbar_flexfit" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linLayout_img"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linLayout2"           android:layout_width="match_parent"
+                android:layout_height="230dp"
+                >
+                <ImageView
+                    android:id="@+id/exercise_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toBottomOf="@id/linLayout3"
+                    app:srcCompat="@drawable/hiit" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/watchVid"
+                android:layout_width="110dp"
+                android:layout_height="44dp"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:gravity="center_vertical"
+                android:text="@string/messageWithLink"
+                android:textColorLink="#6200EE"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/instr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linLayout_img"
+                app:layout_constraintVertical_bias="0.434" />
+
+            <TextView
+                android:id="@+id/instr"
+                android:layout_width="149dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="25dp"
+                android:fontFamily="@font/nunitosans_extrabold"
+                android:text="Instructions"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/step1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/watchVid" />
+
+            <TextView
+                android:id="@+id/step1"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 1"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/s1desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instr"
+                app:layout_constraintVertical_bias="0.52" />
+
+            <TextView
+                android:id="@+id/s1desc"
+                android:layout_width="305dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/step2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/step1" />
+
+            <TextView
+                android:id="@+id/step2"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 2"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/s2desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s1desc"
+                app:layout_constraintVertical_bias="0.69" />
+
+            <TextView
+                android:id="@+id/s2desc"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/step3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step2"
+                app:layout_constraintVertical_bias="0.663" />
+
+            <TextView
+                android:id="@+id/step3"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunitosans_black"
+                android:text="Step 3"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/s3desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/s2desc"
+                app:layout_constraintVertical_bias="0.858" />
+
+            <TextView
+                android:id="@+id/s3desc"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:fontFamily="@font/nunitosans_regular"
+                android:text="In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step3"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>

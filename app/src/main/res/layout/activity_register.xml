@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.activity_login">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/logo" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlineTextField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="311dp"
+        android:layout_height="79dp"
+        android:hint="Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nametf"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="311dp"
+        android:layout_height="79dp"
+        android:hint="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputName"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordtf"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="311dp"
+        android:layout_height="79dp"
+        android:hint="Password"
+        app:endIconDrawable="@mipmap/password_eyecon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:inputType="textPassword"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="129dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btn_blue"
+        android:fontFamily="@font/nunitosans_black"
+        android:text="@string/register"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="292dp"
+        android:layout_height="71dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="A little details here, a sign in there. We’ll hook you up with FlexFit in no time."
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="311dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="By continuing, you agree to FlexFit’s  Privacy Policy and Terms and Conditions"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

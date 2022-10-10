@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AboutusActivity">
+
+    <LinearLayout
+        android:id="@+id/linLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <include layout="@layout/toolbar_flexfit"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc_aboutus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text=" A mobile fitness app that can be downloaded on any Android device and used to get fit anywhere at any time.\n\n\nOur fitness app is available on Android devices, and lets our members have the best in building health for a better future. "
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estab" />
+
+    <ImageView
+        android:id="@+id/app_logo1"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linLayout5"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/flexfitinc"
+        android:layout_width="181dp"
+        android:layout_height="47dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/nunitosans_extrabold"
+        android:text="FlexFit Inc."
+        android:textColor="#020202"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/estab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_logo1" />
+
+    <TextView
+        android:id="@+id/estab"
+        android:layout_width="195dp"
+        android:layout_height="28dp"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="Established in 2021"
+        android:textColor="#B7888888"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexfitinc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
